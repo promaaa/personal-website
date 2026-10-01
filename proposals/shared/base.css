@@ -1,0 +1,94 @@
+/* Round 3 base: one font, plain structure. Every value comes from the
+   variation's tokens.css; this file only says how they are used. */
+
+@font-face {
+  font-family: "Comic Shanns Mono";
+  src: url("fonts/comic-shanns-mono.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+dialog { margin: auto; } /* the reset above would pin dialogs to the corner */
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-synthesis: none; /* one weight only: never fake a bold */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--space-l);
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  font-size: var(--step-0);
+  line-height: var(--leading);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+::selection { background: var(--accent); color: var(--paper); }
+.theme-switching *, .theme-switching *::before, .theme-switching *::after { transition: none !important; }
+
+h1, h2, h3 { font-weight: 400; line-height: var(--leading-tight); text-wrap: balance; }
+p, li { text-wrap: pretty; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* One interaction language: the pen. Underlined at rest, the line turns to
+   the accent colour on hover or focus. Buttons are written the same way. */
+a, .pen {
+  color: inherit;
+  text-decoration: underline var(--hairline) var(--ink-2);
+  text-underline-offset: var(--underline-offset);
+  transition: color var(--dur-quick) var(--ease-quick), text-decoration-color var(--dur-quick) var(--ease-quick);
+}
+@media (hover: hover) { a:hover, .pen:hover { color: var(--accent); text-decoration-color: currentColor; } }
+:focus-visible { outline: var(--focus) solid var(--accent); outline-offset: var(--focus); border-radius: var(--radius); }
+.pen { font: inherit; background: none; border: 0; padding: 0; cursor: pointer; position: relative; user-select: none; }
+.pen::after { content: ""; position: absolute; inset: 50% 50%; min-width: var(--hit); min-height: var(--hit); translate: -50% -50%; }
+.pen[aria-pressed="true"] { color: var(--accent); }
+
+.vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip { position: absolute; inset-inline-start: var(--space-s); inset-block-start: var(--space-s); translate: 0 -300%; background: var(--paper); padding: var(--space-2xs) var(--space-xs); }
+.skip:focus-visible { translate: 0 0; }
+
+.muted { color: var(--ink-2); }
+.plain { padding: 0; list-style: none; }
+
+/* Lists of things: a name, a line, the links. */
+.items { display: grid; gap: var(--space-m); }
+.items h3 { font-size: var(--step-0); color: var(--accent); }
+.items p { margin-block-start: var(--space-3xs); }
+.links { display: flex; flex-wrap: wrap; gap: var(--space-3xs) var(--space-s); margin-block-start: var(--space-3xs); color: var(--ink-2); }
+.dated { display: grid; gap: var(--space-2xs); }
+.dated a { display: flex; justify-content: space-between; gap: var(--space-s); align-items: baseline; text-decoration: none; }
+.dated a > span { text-decoration: underline var(--hairline) var(--ink-2); text-underline-offset: var(--underline-offset); }
+@media (hover: hover) { .dated a:hover > span { text-decoration-color: currentColor; } }
+.dated time { color: var(--ink-2); white-space: nowrap; font-size: var(--step--1); }
+
+/* The egg dialog. */
+.note {
+  width: min(var(--dialog-width), calc(100vw - var(--space-l)));
+  max-height: calc(100dvh - var(--space-l));
+  padding: var(--space-l);
+  background: var(--paper);
+  color: var(--ink);
+  border: var(--hairline) solid var(--ink);
+  border-radius: var(--radius);
+  transition: opacity var(--dur-standard) var(--ease-quick), scale var(--dur-standard) var(--ease-expressive);
+}
+@starting-style { .note[open] { opacity: 0; scale: var(--scale-enter); } }
+.note::backdrop { background: var(--scrim); }
+.note h2 { font-size: var(--step-2); color: var(--accent); margin-block-end: var(--space-s); }
+.note p + p, .note blockquote + p, .note p + blockquote { margin-block-start: var(--space-s); }
+.note blockquote { font-size: var(--step-1); }
+.note img, .note svg { margin-block: var(--space-s); width: 100%; height: auto; }
+.note .actions { display: flex; flex-wrap: wrap; gap: var(--space-m); margin-block-start: var(--space-l); }
+.note .portrait { filter: grayscale(1); }
+.note .drawing { fill: none; stroke: currentColor; stroke-width: var(--stroke); stroke-linecap: round; }
+.note .rotor { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) { .note .rotor { animation: spin var(--dur-rotor) linear infinite; } }
+@keyframes spin { to { rotate: 1turn; } }

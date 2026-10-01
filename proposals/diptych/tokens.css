@@ -1,0 +1,99 @@
+/* ==========================================================================
+   DIPTYCH · tokens.css. Single source of every design value in this proposal.
+   Palette taken from the painting: night slate, brass.
+   Colours: Open Props 1.7 values. Breakpoint used literally in style.css
+   (media queries cannot read custom properties): see the comment there.
+   ========================================================================== */
+
+:root {
+  /* ---- Open Props base colours (trimmed) ---- */
+  --gray-0: #f8f9fa;
+  --gray-5: #adb5bd;
+  --gray-7: #495057;
+  --gray-3: #dee2e6;
+  --gray-12: #030507;
+  --stone-12: #121210;
+  --sand-1: #e6e4dc;
+  --sand-4: #aea58c;
+  --sand-10: #38352d;
+  --cyan-11: #074652;
+  --yellow-6: #fab005;
+
+  /* ---- Light ---- */
+  --paper: var(--gray-0);
+  --ink: var(--gray-12);
+  --ink-2: var(--gray-7);
+  --rule: var(--gray-3);
+  --accent: var(--cyan-11);
+  --scrim: color-mix(in oklab, var(--gray-12) 65%, transparent);
+
+  /* ---- Type (Utopia, utopia-core 1.6): 16px@320 → 18px@1440, ×1.2 → ×1.25 ---- */
+  --step-5: clamp(2.4883rem, 2.2183rem + 1.3499vw, 3.4332rem);
+  --step-4: clamp(2.0736rem, 1.8813rem + 0.9614vw, 2.7466rem);
+  --step-2: clamp(1.44rem, 1.3492rem + 0.454vw, 1.7578rem);
+  --step-1: clamp(1.2rem, 1.1411rem + 0.2946vw, 1.4063rem);
+  --step-0: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+  --step--1: clamp(0.8333rem, 0.8143rem + 0.0952vw, 0.9rem);
+
+  /* One family, one weight: Comic Shanns Mono (MIT), standing in for Comic Code. */
+  --font: "Comic Shanns Mono", "Comic Code", ui-monospace, "Comic Sans MS", monospace;
+  --leading: 1.6;
+  --leading-tight: 1.15;
+
+  /* ---- Space (Utopia): base 16 → 18 ---- */
+  --space-3xs: clamp(0.25rem, 0.2321rem + 0.0893vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4821rem + 0.0893vw, 0.5625rem);
+  --space-xs: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+  --space-s: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+  --space-m: clamp(1.5rem, 1.4464rem + 0.2679vw, 1.6875rem);
+  --space-l: clamp(2rem, 1.9286rem + 0.3571vw, 2.25rem);
+  --space-xl: clamp(3rem, 2.8929rem + 0.5357vw, 3.375rem);
+  --space-2xl: clamp(4rem, 3.8571rem + 0.7143vw, 4.5rem);
+  --gutter: clamp(1rem, 0.6429rem + 1.7857vw, 2.25rem); /* Utopia space s-l */
+
+  /* ---- Lines, radius, shadow (Open Props) ---- */
+  --measure: 40rem;
+  --hairline: 1px;
+  --focus: 2px;
+  --radius: 5px;           /* --radius-2 */
+  --hit: 2.75rem;
+  --stroke: 1.5;
+  --underline-offset: 0.2em;
+  --dialog-width: 34rem;
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+  --shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+
+  /* ---- Motion: Kinetics curves sampled into linear() ---- */
+  --ease-quick: linear(0 0%, 0.341 6.3%, 0.577 12.5%, 0.729 18.8%, 0.826 25%, 0.888 31.3%, 0.928 37.5%, 0.954 43.8%, 0.972 50%, 0.983 56.3%, 0.99 62.5%, 0.995 68.8%, 0.998 75%, 0.999 81.3%, 1 87.5%, 1 93.8%, 1 100%);
+  --ease-standard: linear(0 0%, 0.003 6.3%, 0.014 12.5%, 0.036 18.8%, 0.071 25%, 0.125 31.3%, 0.208 37.5%, 0.332 43.8%, 0.5 50%, 0.668 56.3%, 0.792 62.5%, 0.875 68.8%, 0.929 75%, 0.964 81.3%, 0.986 87.5%, 0.997 93.8%, 1 100%);
+  --ease-expressive: linear(0 0%, 0.216 5%, 0.404 10%, 0.566 15%, 0.703 20%, 0.816 25%, 0.907 30%, 0.978 35%, 1.03 40%, 1.066 45%, 1.087 50%, 1.097 55%, 1.097 60%, 1.089 65%, 1.076 70%, 1.06 75%, 1.042 80%, 1.026 85%, 1.013 90%, 1.003 95%, 1 100%);
+  --dur-quick: 160ms;
+  --dur-standard: 400ms;
+  --dur-rotor: 9s;
+  --scale-enter: 0.96;
+
+  --panel-mobile: 62svh;
+  --hero-focus: 50% 40%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: var(--stone-12);
+    --ink: var(--sand-1);
+    --ink-2: var(--sand-4);
+    --rule: var(--sand-10);
+    --accent: var(--yellow-6);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: var(--stone-12);
+  --ink: var(--sand-1);
+  --ink-2: var(--sand-4);
+  --rule: var(--sand-10);
+  --accent: var(--yellow-6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-standard: 1ms; --scale-enter: 1; --tilt: 0deg; }
+}
