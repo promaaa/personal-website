@@ -1,0 +1,124 @@
+/* ==========================================================================
+   AS-BUILT · tokens.css. Single source of every design value in this proposal.
+   - Type & space: Utopia (utopia-core 1.6): 17px@320 → 19px@1440,
+     ×1.2 → ×1.333 (no WCAG zoom warning up to step 7).
+   - Colour names & values: Open Props 1.7 (stone, gray, teal).
+   - Motion: Kinetics cubic-beziers sampled into linear(): glide, in-out, spring.
+   Breakpoint used literally in style.css: 58rem (text | figure side by side).
+   ========================================================================== */
+
+@font-face { font-family: "Instrument Serif"; src: url("fonts/instrument-serif.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Instrument Serif"; src: url("fonts/instrument-serif-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans.woff2") format("woff2"); font-weight: 400 600; font-style: normal; font-display: swap; }
+
+@property --split { syntax: "<percentage>"; inherits: true; initial-value: 50%; }
+
+:root {
+  /* ---- Open Props base colours (trimmed) ---- */
+  --stone-0: #f8fafb;
+  --gray-1: #f1f3f5;
+  --gray-3: #dee2e6;
+  --gray-5: #adb5bd;
+  --gray-7: #495057;
+  --gray-8: #343a40;
+  --gray-11: #0d0f12;
+  --gray-12: #030507;
+  --teal-4: #38d9a9;
+  --teal-10: #066649;
+
+  /* ---- Drawing paper, black ink, and one engineering green ---- */
+  --paper: var(--stone-0);
+  --ink: var(--gray-12);
+  --ink-2: var(--gray-7);
+  --rule: var(--gray-3);
+  --green: var(--teal-10);
+  --green-wash: color-mix(in oklab, var(--teal-10) 10%, transparent);
+  --scrim: color-mix(in oklab, var(--gray-12) 60%, transparent);
+
+  /* ---- Type (Utopia) ---- */
+  --step-7: clamp(3.8071rem, 2.3576rem + 7.2479vw, 8.8806rem);
+  --step-5: clamp(2.6438rem, 1.9713rem + 3.3629vw, 4.9979rem);
+  --step-4: clamp(2.2032rem, 1.7614rem + 2.2088vw, 3.7493rem);
+  --step-3: clamp(1.836rem, 1.5569rem + 1.3953vw, 2.8127rem);
+  --step-2: clamp(1.53rem, 1.3643rem + 0.8287vw, 2.1101rem);
+  --step-1: clamp(1.275rem, 1.187rem + 0.4399vw, 1.5829rem);
+  --step-0: clamp(1.0625rem, 1.0268rem + 0.1786vw, 1.1875rem);
+  --step--1: clamp(0.8854rem, 0.8839rem + 0.0078vw, 0.8908rem);
+
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-text: "Instrument Sans", system-ui, sans-serif;
+  --leading-tight: 0.95;
+  --leading-snug: 1.2;
+  --leading-text: 1.55;
+  --tracking-display: -0.02em;
+  --figures: "lnum" 1, "tnum" 1;
+
+  /* ---- Space (Utopia) ---- */
+  --space-3xs: clamp(0.25rem, 0.2321rem + 0.0893vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5446rem + 0.0893vw, 0.625rem);
+  --space-xs: clamp(0.8125rem, 0.7946rem + 0.0893vw, 0.875rem);
+  --space-s: clamp(1.0625rem, 1.0268rem + 0.1786vw, 1.1875rem);
+  --space-m: clamp(1.625rem, 1.5714rem + 0.2679vw, 1.8125rem);
+  --space-l: clamp(2.125rem, 2.0536rem + 0.3571vw, 2.375rem);
+  --space-xl: clamp(3.1875rem, 3.0804rem + 0.5357vw, 3.5625rem);
+  --space-2xl: clamp(4.25rem, 4.1071rem + 0.7143vw, 4.75rem);
+  --space-s-l: clamp(1.0625rem, 0.6875rem + 1.875vw, 2.375rem);
+  --space-l-xl: clamp(2.125rem, 1.7143rem + 2.0536vw, 3.5625rem);
+  --space-xl-2xl: clamp(3.1875rem, 2.7411rem + 2.2321vw, 4.75rem);
+  --space-2xl-3xl: clamp(4.25rem, 3.4286rem + 4.1071vw, 7.125rem);
+
+  /* ---- Layout ---- */
+  --page: 84rem;
+  --measure: 36rem;
+  --hairline: 1px;
+  --seam: 2px;                 /* the line between drawn and built */
+  --knob: 2.75rem;             /* the handle on the seam, also the hit area */
+  --radius-round: 50%;
+  --hit: 2.75rem;
+  --dialog-width: 36rem;
+  --underline-offset: 0.2em;
+  --num-col: 3.5rem;           /* machine numbers */
+  --split-from: 100%;          /* the sweep starts fully drawn */
+  --split-at: 50%;             /* and settles halfway, until someone moves it */
+  --figure-ratio: 1400 / 1271; /* the robot photograph */
+  --stroke-drawing: 1.5;
+  --drawing-letter: 11px;
+
+  /* ---- Motion ---- */
+  /* quick: Kinetics "glide" cubic-bezier(0.16, 1, 0.3, 1) */
+  --ease-quick: linear(0 0%, 0.341 6.3%, 0.577 12.5%, 0.729 18.8%, 0.826 25%, 0.888 31.3%, 0.928 37.5%, 0.954 43.8%, 0.972 50%, 0.983 56.3%, 0.99 62.5%, 0.995 68.8%, 0.998 75%, 0.999 81.3%, 1 87.5%, 1 93.8%, 1 100%);
+  /* standard: Kinetics "underline draw" cubic-bezier(0.65, 0, 0.35, 1) */
+  --ease-standard: linear(0 0%, 0.003 6.3%, 0.014 12.5%, 0.036 18.8%, 0.071 25%, 0.125 31.3%, 0.208 37.5%, 0.332 43.8%, 0.5 50%, 0.668 56.3%, 0.792 62.5%, 0.875 68.8%, 0.929 75%, 0.964 81.3%, 0.986 87.5%, 0.997 93.8%, 1 100%);
+  /* expressive: Kinetics spring(280, 18) cubic-bezier(0.34, 1.56, 0.64, 1), the first sweep */
+  --ease-expressive: linear(0 0%, 0.216 5%, 0.404 10%, 0.566 15%, 0.703 20%, 0.816 25%, 0.907 30%, 0.978 35%, 1.03 40%, 1.066 45%, 1.087 50%, 1.097 55%, 1.097 60%, 1.089 65%, 1.076 70%, 1.06 75%, 1.042 80%, 1.026 85%, 1.013 90%, 1.003 95%, 1 100%);
+  --dur-quick: 160ms;
+  --dur-standard: 400ms;
+  --dur-expressive: 1400ms;
+  --dur-rotor: 9s;
+  --sweep-delay: 400ms;
+  --scale-enter: 0.96;
+}
+
+/* ---- Dark: the drawing office after hours ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: var(--gray-11);
+    --ink: var(--gray-1);
+    --ink-2: var(--gray-5);
+    --rule: var(--gray-8);
+    --green: var(--teal-4);
+    --green-wash: color-mix(in oklab, var(--teal-4) 14%, transparent);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: var(--gray-11);
+  --ink: var(--gray-1);
+  --ink-2: var(--gray-5);
+  --rule: var(--gray-8);
+  --green: var(--teal-4);
+  --green-wash: color-mix(in oklab, var(--teal-4) 14%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-standard: 1ms; --dur-expressive: 1ms; --sweep-delay: 0ms; --scale-enter: 1; }
+}
