@@ -74,7 +74,7 @@ def shelf_html(d: dict, other: dict) -> str:
   <link rel="alternate" hreflang="fr" href="https://promaa.tech/books/fr/">
   <link rel="alternate" hreflang="x-default" href="https://promaa.tech/books/">
   <meta name="theme-color" content="#f2f4f6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#121210" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{here}">
   <meta property="og:site_name" content="Marc Duboc">

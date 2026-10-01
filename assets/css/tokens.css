@@ -6,7 +6,7 @@
 
    Type & space   Utopia (utopia-core 1.6, the utopia.fyi engine)
                   type 16px@320 → 18px@1440, ×1.2 → ×1.25; space base 16 → 18
-   Colour         Open Props 1.7 values (stone, gray, blue, red), trimmed
+   Colour         Open Props 1.7 values (stone, sand, gray, blue, red), trimmed
    Motion         three tokens; curves from Kinetics (kinetics.colorion.co),
                   which publishes cubic-beziers only, sampled into linear()
    Breakpoint     56rem: the painting moves to a fixed half-screen panel.
@@ -27,15 +27,15 @@
   --stone-1: #f2f4f6;
   --gray-0: #f8f9fa;
   --gray-4: #ced4da;
-  --gray-5: #adb5bd;
   --gray-7: #495057;
-  --gray-8: #343a40;
-  --gray-10: #16191d;
-  --gray-11: #0d0f12;
   --gray-12: #030507;
-  --blue-2: #a5d8ff;
+  --stone-12: #121210;
+  --sand-1: #e6e4dc;
+  --sand-4: #aea58c;
+  --sand-10: #38352d;
+  --sand-11: #252521;
   --blue-11: #114678;
-  --red-4: #ff8787;
+  --red-6: #fa5252;
   --red-9: #c92a2a;
 
   /* ---- Airmail: blue ink on paper, red for what matters ---- */
@@ -109,26 +109,27 @@
   --idle-ms: 60000;          /* stillness before "wait and hope" appears (read by site.js) */
 }
 
-/* ---- Night mail: the same letter after dark ---- */
+/* ---- Night mail: the same letter read by lamplight. Warm black, parchment
+   ink, a true red; colour stays on the accents, never on the running text. ---- */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: var(--gray-11);
-    --card: var(--gray-10);
-    --ink: var(--blue-2);
-    --ink-2: var(--gray-5);
-    --rule: var(--gray-8);
-    --accent: var(--red-4);
+    --paper: var(--stone-12);
+    --card: var(--sand-11);
+    --ink: var(--sand-1);
+    --ink-2: var(--sand-4);
+    --rule: var(--sand-10);
+    --accent: var(--red-6);
     --shadow-color: 220 40% 2%;
     --shadow-strength: 25%;
   }
 }
 :root[data-theme="dark"] {
-  --paper: var(--gray-11);
-  --card: var(--gray-10);
-  --ink: var(--blue-2);
-  --ink-2: var(--gray-5);
-  --rule: var(--gray-8);
-  --accent: var(--red-4);
+  --paper: var(--stone-12);
+  --card: var(--sand-11);
+  --ink: var(--sand-1);
+  --ink-2: var(--sand-4);
+  --rule: var(--sand-10);
+  --accent: var(--red-6);
   --shadow-color: 220 40% 2%;
   --shadow-strength: 25%;
 }
