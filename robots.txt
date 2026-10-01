@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-# Internal HTMX fragments are not meant for indexing
-Disallow: /fragments/
-
 Sitemap: https://promaa.tech/sitemap.xml
