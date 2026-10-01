@@ -1,0 +1,24 @@
+/* DIPTYCH: the painting holds still on one side, the text scrolls on the other. */
+/* Breakpoint: 56rem, where the panel and the text sit side by side. */
+.diptych { display: grid; }
+.panel { position: relative; }
+.panel .hero { width: 100%; height: var(--panel-mobile); object-fit: cover; object-position: var(--hero-focus); }
+.panel figcaption { position: absolute; inset-inline-start: var(--space-s); inset-block-end: var(--space-s); max-width: calc(100% - var(--space-l)); padding: var(--space-2xs) var(--space-xs); background: var(--paper); border-radius: var(--radius); font-size: var(--step--1); color: var(--ink-2); }
+@media (min-width: 56rem) {
+  .diptych { grid-template-columns: 1fr 1fr; }
+  .panel { position: sticky; inset-block-start: 0; height: 100dvh; }
+  .panel .hero { height: 100%; }
+}
+.text { width: 100%; max-width: calc(var(--measure) + var(--gutter) * 2); padding: var(--space-m) var(--gutter) 0; margin-inline: auto; }
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-xs) var(--space-m); margin-block-end: var(--space-2xl); }
+.nav { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-m); }
+.nav a { display: inline-block; padding-block: var(--space-3xs); }
+h1 { font-size: var(--step-5); color: var(--accent); }
+.intro { font-size: var(--step-1); margin-block-start: var(--space-s); }
+section { padding-block-start: var(--space-2xl); }
+h2 { font-size: var(--step-2); margin-block-end: var(--space-m); }
+section > p + p { margin-block-start: var(--space-s); }
+.shelf, .email { margin-block-start: var(--space-m); }
+.email { font-size: var(--step-1); display: flex; flex-wrap: wrap; gap: var(--space-xs); align-items: baseline; }
+.copy { font-size: var(--step--1); color: var(--ink-2); }
+.foot { padding-block: var(--space-2xl) var(--space-l); font-size: var(--step--1); }
