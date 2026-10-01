@@ -10,6 +10,34 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-10-01
+
+### Added
+- A painting for every page, all in the public domain and redrawn in dots (an 8×8 ordered dither, 400×500 dots):
+  - the homepage: *The Ninth Wave*, Ivan Aivazovsky;
+  - *The Work of Writing*: *The Monk by the Sea*, Caspar David Friedrich;
+  - *Lucid Hope*: *Woman before the Rising Sun*, Friedrich;
+  - *Domestic Sovereignty*: *Woman at a Window*, Friedrich;
+  - *The Collapse of Money*: *The Tower of Babel*, Pieter Bruegel the Elder;
+  - *The Unspoken Dialogue*: *Max Schmitt in a Single Scull*, Thomas Eakins;
+  - the essay list: Hokusai's *Whaling off the Gotō Islands* in the site's blue ink, turned to light lines in the dark theme.
+- `paint.sh`, which makes a painting in three sizes and a page's 1200×630 social card.
+- A social card for each essay and for the essay list.
+
+### Changed
+- Paintings are lossless WebP at 2×, 3× and 4× their dots: every dot stays sharp, and each file weighs 40 to 100 KB, where lossy WebP needed 600 KB for the same image. The homepage weighs 95 KB in all, font and painting included.
+- The fixed panel appears only on landscape screens (56rem and wider, 5:4 or wider). Tablets held upright get the postcard, which never grows taller than 75% of the screen, so a phone held sideways still shows it whole.
+- On ultra-wide screens the panel stops at 95% of the screen height and the text is centred in the space left.
+- Each painting sets its own focal point, so the panel crops around the subject.
+- `sizes` accounts for the panel's height, so a tablet in landscape loads a sharp enough image.
+- The Galt door under the homepage painting reads *Who set the dots?*
+
+### Removed
+- The AI paintings: the astronomer on the homepage and the essay illustrations, landscape pictures that the portrait panel cropped badly.
+
+### Fixed
+- The Assange note reopened as soon as its Close button was clicked: the selection that opened it was still there, so the click counted as selecting it again. The selection is now cleared when the note opens.
+
 ## [2.0.2] - 2026-10-01
 
 ### Fixed
@@ -72,7 +100,8 @@ The legacy easter-egg portfolio, as published on promaa.tech.
 - Three cinematic easter eggs: Galt, Monte Cristo, Assange.
 - Five essays, the bilingual book shelf, and the LaTeX reading guides (EN/FR).
 
-[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/promaaa/personal-website/compare/v2.0.2...v2.1.0
 [2.0.2]: https://github.com/promaaa/personal-website/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/promaaa/personal-website/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/promaaa/personal-website/compare/v1.0.0...v2.0.0

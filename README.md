@@ -1,6 +1,6 @@
 # promaa.tech - the personal site of Marc Duboc
 
-**Machines, essays and books, written in one comic monospace beside one painting.** The site of a robotics and embedded systems engineer: five builds, five essays, a bilingual shelf of twenty-one books, and the reading guides that go with it. Live at **[promaa.tech](https://promaa.tech)**.
+**Machines, essays and books, written in one comic monospace, each page beside its own painting.** The site of a robotics and embedded systems engineer: five builds, five essays, a bilingual shelf of twenty-one books, and the reading guides that go with it. Live at **[promaa.tech](https://promaa.tech)**.
 
 ```bash
 python3 -m http.server 8000   # then open http://localhost:8000
@@ -13,7 +13,7 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 Plain HTML, CSS and a few kilobytes of vanilla JavaScript, served by GitHub Pages straight from `main`. No framework, no build step, no tracker, no cookie. Every page reads fine with JavaScript off.
 
-![The homepage on a wide screen: an AI painting of an astronomer at a brass telescope fills the left half; on the right, Marc Duboc in red and the text in blue ink](.github/readme/home.webp)
+![The homepage on a wide screen: Aivazovsky's The Ninth Wave, redrawn in coloured dots, fills the left half; on the right, Marc Duboc in red and the text in blue ink](.github/readme/home.webp)
 
 ## Gallery
 
@@ -21,17 +21,19 @@ Plain HTML, CSS and a few kilobytes of vanilla JavaScript, served by GitHub Page
 | --- | --- |
 | ![The homepage in the light theme and in the dark theme, side by side](.github/readme/themes.webp) | **By day, by lamplight.** Blue ink on paper, or parchment on a warm black. The theme follows the system, and the toggle remembers your choice. |
 | ![Three phones: the homepage with its tilted postcard, an essay in the dark theme, and the French shelf](.github/readme/phones.webp) | **On a phone** the painting becomes a postcard slipped into the letter. Essays and the shelf keep one readable column. |
-| ![An essay in the dark theme, its illustration held still on the left while the text runs on the right](.github/readme/essay.webp) | **Essays** keep their illustration still on the left while the text scrolls, with previous and next links at the end. |
+| ![An essay in the dark theme: Friedrich's Woman at a Window held still on the left while the text runs on the right](.github/readme/essay.webp) | **Essays** keep their painting still on the left while the text scrolls, with previous and next links at the end. |
+| ![Seven paintings in a row: The Ninth Wave, The Monk by the Sea, Woman before the Rising Sun, Woman at a Window, The Tower of Babel, Max Schmitt in a Single Scull, and Hokusai's whale in blue ink](.github/readme/paintings.webp) | **One painting per page**, all in the public domain: Aivazovsky, Friedrich, Bruegel, Eakins and Hokusai, redrawn in dots. Each one weighs 40 to 100 KB. |
 | ![The bookshelf searched for dumas: one book left, The Count of Monte Cristo](.github/readme/search.webp) | **The shelf** lists twenty-one books in English and French as static HTML. The search narrows it as you type. |
 | ![First page of the reading guide PDF, in the same blue and red monospace](.github/readme/guide.webp) | **Reading guides**: the same shelf typeset as a PDF with XeLaTeX, generated from the same JSON. |
 
 ## Features
 
-- **Diptych layout**: on a wide screen the painting holds the left half while the text scrolls on the right. On a phone it becomes a postcard.
+- **Diptych layout**: on a wide, landscape screen the painting holds the left half while the text scrolls on the right. Phones and upright tablets get a postcard instead, never taller than the screen. On ultra-wide screens the panel stops at 95% of the height and the text is centred in the space left.
+- **Paintings in dots**: public-domain paintings redrawn as 400×500 dots with an ordered dither, saved as lossless WebP at 2×, 3× and 4×. Each page sets the painting's focal point, so the panel crops around the subject at any screen ratio.
 - **One family, one weight**: Comic Shanns Mono, standing in for Comic Code. Hierarchy comes from size and colour only: blue ink, and a red for what matters.
 - **Light and dark**: both themes are designed, not inverted. Theme switches never animate.
 - **Bilingual shelf**: `/books/` and `/books/fr/` are generated from `books/books-en.json` and `books/books-fr.json`, the single source that also feeds the PDF guides.
-- **Fast**: about 12 KB of HTML, CSS and JavaScript on the homepage (gzipped) and one 15 KB font. Images are AVIF with a WebP fallback, sized to their slot. Links prerender on hover with Speculation Rules.
+- **Fast**: the homepage weighs 95 KB in all: about 13 KB of HTML, CSS and JavaScript (gzipped), one 15 KB font and a 50 KB painting. The painting is preloaded and picked from `srcset` by the panel's real size. Links prerender on hover with Speculation Rules.
 - **Accessible**: skip link, visible focus, 44 px targets, landmarks for screen readers, reduced motion respected. Contrast is checked in both themes with axe.
 - **Works without JavaScript**: every page and both shelves are plain HTML. Script adds the theme toggle, the search and the copy button on top.
 - **Prints cleanly**: a print stylesheet turns any page into a plain letter.
@@ -42,11 +44,12 @@ Lighthouse, mobile profile:
 
 | Page | Performance | Accessibility | Best practices | SEO | LCP | CLS |
 | --- | --- | --- | --- | --- | --- | --- |
-| `/` | 100 | 100 | 100 | 100 | 1.8 s | 0 |
-| `/essays/` | 100 | 100 | 100 | 100 | 1.7 s | 0 |
-| `/essays/lucid-hope/` | 100 | 100 | 100 | 100 | 1.4 s | 0 |
+| `/` | 100 | 100 | 100 | 100 | 1.7 s | 0 |
+| `/essays/` | 100 | 100 | 100 | 100 | 1.4 s | 0 |
+| `/essays/lucid-hope/` | 100 | 100 | 100 | 100 | 1.7 s | 0 |
+| `/essays/collapse-of-money/` | 100 | 100 | 100 | 100 | 1.8 s | 0 |
 | `/books/` | 100 | 100 | 100 | 100 | 1.4 s | 0 |
-| `/books/fr/` | 100 | 100 | 100 | 100 | 1.4 s | 0 |
+| `/books/fr/` | 100 | 100 | 100 | 100 | 1.5 s | 0 |
 
 The 404 page is `noindex` on purpose, so it is left out of the SEO column.
 
@@ -87,18 +90,14 @@ AAAA  @   2606:50c0:8003::153
 
 1. Copy an existing essay folder, for example `essays/lucid-hope/`, to `essays/<slug>/`.
 2. In its `index.html`, change the title, the description, the canonical URL, the dates (`<time>`, `article:published_time` and the JSON-LD), and the paragraphs inside `<article class="prose">`.
-3. Replace the illustration, starting from a source image `picture.png`:
+3. Make its painting and its social card (see [Change a painting](#change-a-painting)):
 
 ```bash
-cd essays/<slug>
-for w in 600 1024; do
-  magick picture.png -resize ${w}x -strip -quality 55 picture-$w.avif
-  magick picture.png -resize ${w}x -strip -quality 72 picture-$w.webp
-done
-rm picture.png
+./paint.sh dots crop.png essays/<slug>/painting
+./paint.sh card essays/<slug>/painting "Essay title" "The one-line description." "An essay by Marc Duboc · promaa.tech" essays/<slug>/og.jpg
 ```
 
-4. Set the `width` and `height` of the `<img>` to the 1024px version (`identify picture-1024.webp`) and write a real `alt`.
+4. In the `<figure class="painting">`, write a real `alt`, the credit in the `<figcaption>`, and the focal point in `style="--panel-focus: x% y%"`.
 5. Link it from `essays/index.html`, from the list on the homepage, and from the previous and next essays. Then add it to `sitemap.xml`.
 
 ## Add a book
@@ -137,14 +136,31 @@ magick cover.jpg -resize 240x -strip -quality 82 -interlace JPEG assets/images/b
 
 This needs Python 3, ImageMagick (to read the cover sizes) and [tectonic](https://tectonic-typesetting.github.io/), either on `PATH` or in `.tools/tectonic`. It rewrites `books/index.html`, `books/fr/index.html`, both `.tex` files, and both PDFs in `assets/docs/`.
 
-## Change the painting
+## Change a painting
 
-The homepage painting appears in three places:
-- the `<picture>` in `index.html`;
-- its preload in the `<head>`;
-- `assets/images/og.jpg`, the social preview.
+Every page with a painting has the same three pieces: the `<figure class="painting">`, the image preload in the `<head>`, and a social card (`og.jpg`). `paint.sh` makes the images; it needs ImageMagick 7.
 
-Produce the variants the same way as an essay illustration (`astronomer-400` and `astronomer-853`, in AVIF and WebP). Then update the `alt` and the credit in the `<figcaption>`. If the subject sits off-centre, also adjust `--panel-focus` in `assets/css/tokens.css`.
+1. Pick a picture you may publish, ideally a public-domain painting at least 1600 px tall, with its subject near the middle.
+2. Crop it to 4:5, the ratio of the panel. For example, to keep a 2064 px wide slice starting 810 px from the left:
+
+```bash
+magick source.jpg -crop 2064x2580+810+0 +repage crop.png
+```
+
+3. Make the three sizes, in coloured dots or in the site's blue ink:
+
+```bash
+./paint.sh dots crop.png assets/images/ninth-wave   # ninth-wave-800.webp, -1200, -1600
+./paint.sh ink crop.png assets/images/goto-whaling   # for a print: ink on paper, inverted in the dark theme
+```
+
+4. Make the social card, 1200×630, the painting beside the page title:
+
+```bash
+./paint.sh card assets/images/ninth-wave "Marc Duboc" "Robotics & embedded systems engineer." "promaa.tech · Seoul" assets/images/og.jpg
+```
+
+5. In the page, point the `src`, `srcset` and preload `imagesrcset` at the new files, and write the `alt` and the credit. Set `--panel-focus` on the figure to the point the panel must keep in view when it crops, for example `style="--panel-focus: 40% 80%"` for the sailors at the bottom of *The Ninth Wave*. A print drawn in ink takes the class `painting ink`.
 
 ## Design tokens
 
@@ -153,7 +169,7 @@ Produce the variants the same way as an essay illustration (`astronomer-400` and
 - **Type and space**: fluid `clamp()` scales from [Utopia](https://utopia.fyi), 16 to 18 px between 320 and 1440 px viewports.
 - **Colour**: [Open Props](https://open-props.style) values. Light is blue ink on paper with a red accent. Dark reads the same letter by lamplight: parchment text on a warm black, with the same red for what matters.
 - **Motion**: three tokens, curves from [Kinetics](https://kinetics.colorion.co) sampled into `linear()`. Reduced motion shortens or removes all of them.
-- **Breakpoint**: one, at `56rem`, where the painting becomes a fixed panel. Media queries cannot read custom properties, so the value is written in `site.css` and documented in `tokens.css`.
+- **Breakpoint**: one, at `56rem` on a screen at least 5:4 wide, where the painting becomes a fixed panel `--panel-width` wide. Media queries cannot read custom properties, so the query is written in `site.css` and in each image's `sizes`, and documented in `tokens.css`.
 
 ## Using Comic Code
 
@@ -175,7 +191,14 @@ Changes land through pull requests and are recorded in [CHANGELOG.md](CHANGELOG.
 ## Credits
 
 - **Font**: [Comic Shanns Mono](https://github.com/jesusmgg/comic-shanns-mono) by Shannon Miwa and Jesus Gonzalez, under the MIT licence ([LICENSE](assets/fonts/LICENSE-comic-shanns-mono.md)). A middle dot glyph was added for this site.
-- **Homepage painting**: *The astronomer*, AI-generated, by [Suraajm20 on Pixabay](https://pixabay.com/illustrations/ai-generated-steampunk-astronomer-9610010/), under the [Pixabay Content License](https://pixabay.com/service/license-summary/).
+- **Paintings**, all in the public domain, redrawn in dots for this site:
+  - [*The Ninth Wave*](https://commons.wikimedia.org/wiki/File:Hovhannes_Aivazovsky_-_The_Ninth_Wave_-_Google_Art_Project.jpg), Ivan Aivazovsky, 1850;
+  - [*The Monk by the Sea*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Der_M%C3%B6nch_am_Meer_-_Google_Art_Project.jpg), Caspar David Friedrich, 1808–1810;
+  - [*Woman before the Rising Sun*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Frau_vor_untergehender_Sonne.jpg), Caspar David Friedrich, c. 1818;
+  - [*Woman at a Window*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Frau_am_Fenster_-_Google_Art_Project.jpg), Caspar David Friedrich, 1822;
+  - [*The Tower of Babel*](https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project_-_edited.jpg), Pieter Bruegel the Elder, 1563;
+  - [*Max Schmitt in a Single Scull*](https://commons.wikimedia.org/wiki/File:The_Champion_Single_Sculls_(Max_Schmitt_in_a_Single_Scull)_MET_DT86.jpg), Thomas Eakins, 1871;
+  - [*Whaling off the Gotō Islands*](https://commons.wikimedia.org/wiki/File:Whaling_off_the_Coast_of_the_Goto_Islands.jpg), Katsushika Hokusai, c. 1833.
 - **Design references**: [Utopia](https://utopia.fyi), [Open Props](https://open-props.style), [Kinetics](https://kinetics.colorion.co), and the checklists of [Rauno Freiberg](https://interfaces.rauno.me) and [ui-skills](https://www.ui-skills.com).
 
 ## Contact
