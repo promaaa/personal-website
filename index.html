@@ -23,13 +23,13 @@
   <meta property="og:image" content="https://promaa.tech/assets/images/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="An astronomer at a brass telescope, beside the words Marc Duboc, robotics and embedded systems engineer, Seoul.">
+  <meta property="og:image:alt" content="The Ninth Wave, Ivan Aivazovsky, 1850, in coloured dots, beside the page title.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@proma__">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/comic-shanns-mono.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/avif" imagesrcset="assets/images/astronomer-400.avif 400w, assets/images/astronomer-853.avif 853w" imagesizes="(min-width: 56rem) 50vw, 92vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/images/ninth-wave-800.webp 800w, assets/images/ninth-wave-1200.webp 1200w, assets/images/ninth-wave-1600.webp 1600w" imagesizes="(min-width: 56rem) and (min-aspect-ratio: 5/4) max(50vw, 80vh), 92vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/print.css" media="print">
@@ -61,12 +61,9 @@
       <p class="intro">Robotics &amp; embedded systems engineer. I build machines, write essays and read with a pencil.</p>
       <p class="aside" data-night hidden>It’s late where you are. <button class="pen" type="button" data-egg="frankl">A word for the night</button></p>
 
-      <figure class="painting">
-        <picture>
-          <source type="image/avif" srcset="assets/images/astronomer-400.avif 400w, assets/images/astronomer-853.avif 853w" sizes="(min-width: 56rem) 50vw, 92vw">
-          <img src="assets/images/astronomer-853.webp" srcset="assets/images/astronomer-400.webp 400w, assets/images/astronomer-853.webp 853w" sizes="(min-width: 56rem) 50vw, 92vw" width="853" height="1280" alt="Painting of a bearded astronomer at a huge brass telescope full of gears, under a full moon." fetchpriority="high">
-        </picture>
-        <figcaption>The astronomer. AI-generated, <a href="https://pixabay.com/illustrations/ai-generated-steampunk-astronomer-9610010/">Suraajm20 on Pixabay</a>. <button class="pen" type="button" data-egg="galt" data-needs-js>Who painted this?</button></figcaption>
+      <figure class="painting" style="--panel-focus: 40% 80%">
+        <img src="assets/images/ninth-wave-1200.webp" srcset="assets/images/ninth-wave-800.webp 800w, assets/images/ninth-wave-1200.webp 1200w, assets/images/ninth-wave-1600.webp 1600w" sizes="(min-width: 56rem) and (min-aspect-ratio: 5/4) max(50vw, 80vh), 92vw" width="1200" height="1500" alt="Aivazovsky’s The Ninth Wave in coloured dots: shipwrecked sailors cling to a broken mast as a huge wave rises under a golden sunrise." fetchpriority="high">
+        <figcaption><cite><a href="https://commons.wikimedia.org/wiki/File:Hovhannes_Aivazovsky_-_The_Ninth_Wave_-_Google_Art_Project.jpg">The Ninth Wave</a></cite>, Ivan Aivazovsky, 1850. <button class="pen" type="button" data-egg="galt" data-needs-js>Who set the dots?</button></figcaption>
       </figure>
 
       <section id="machines" aria-labelledby="machines-h">
