@@ -1,86 +1,262 @@
 {
   "lang": "en",
-  "track_1": "Sovereignty, Freedom & Clear Thinking",
-  "track_2": "Systems, Power & Technology",
-  "track_3": "Craft, Solitude & The Inner Fortress",
-  "track_4": "Great Narratives & Human Truths",
-  "masthead_tag": "Marc Duboc · Reading Field Guide",
-  "masthead_location": "Personal Selection for Friends · 2026",
-  "masthead_title": "A Reader’s Guide to Thought, Freedom & Craft",
-  "prologue": "“I put this guide together for close friends asking what shaped the way I think, build, and live. These aren’t books to pad a curriculum; they are high-leverage texts that provided me with mental clarity, discipline, and sovereignty. Read with a pencil, keep what serves you, ignore the rest.”",
-  "prologue_author": "— Marc Duboc (@promaa) · Paris, France",
-  "colophon_left": "Marc Duboc · Reading Field Guide · Paris, France",
-  "colophon_right": "marc.duboc.pro@proton.me · github.com/promaaa",
-  "tracks": [
+  "page": {
+    "title": "Books I would recommend to a friend",
+    "intro": "“I put this list together for friends who ask what shaped the way I think, build, and live. These aren’t books to pad an academic CV. They are the texts I keep on my desk—the ones that gave me mental firewalls against noise, taught me patience in difficult projects, or reminded me why craft, solitude, and freedom matter. Take whatever sparks your curiosity, and leave the rest.”",
+    "signature": "Marc Duboc (@promaa), Seoul",
+    "search_label": "Search the shelf",
+    "search_placeholder": "title, author, idea…",
+    "count": "{n} books",
+    "none": "Nothing on the shelf matches “{q}”.",
+    "guide_label": "Reading guide (PDF)",
+    "other_lang": "Lire en français",
+    "other_href": "fr/",
+    "back": "Marc Duboc",
+    "best_for": "Best for",
+    "description": "Twenty-one books Marc Duboc recommends to friends: liberty, systems and power, solitude and craft, and great narratives."
+  },
+  "guide": {
+    "masthead_tag": "Marc Duboc · Reading Field Guide",
+    "masthead_location": "Personal Selection for Friends · 2026",
+    "masthead_title": "A Reader’s Guide to Thought, Freedom & Craft",
+    "prologue": "“I put this guide together for close friends asking what shaped the way I think, build, and live. These aren’t books to pad a curriculum; they are high-leverage texts that provided me with mental clarity, discipline, and sovereignty. Read with a pencil, keep what serves you, ignore the rest.”",
+    "prologue_author": "Marc Duboc (@promaa), Seoul",
+    "colophon_left": "Marc Duboc · Reading Field Guide · Seoul",
+    "colophon_right": "marc.duboc@imt-atlantique.net · promaa.tech",
+    "pdf": "../assets/docs/books-recommendations-en.pdf"
+  },
+  "sections": [
     {
-      "num": "01",
-      "title": "Sovereignty, Freedom & Clear Thinking",
+      "title": "Foundational Pillars & Liberty",
       "books": [
         {
           "num": "01",
-          "cover": "01-frankl.jpg",
           "title": "Man’s Search for Meaning",
           "author": "Viktor E. Frankl",
           "year": "1946",
-          "genre": "Logotherapy",
-          "scenario_label": "Best for:",
-          "scenario": "When feeling overwhelmed or losing your sense of purpose.",
-          "verdict": "Frankl survived Auschwitz and distilled the ultimate truth: you cannot control all circumstances, but you retain absolute sovereignty over your attitude.",
-          "takeaway": "Find a \"why\" strong enough to outlast the collapse of any \"how.\""
+          "tag": "Memoir · Resilience",
+          "note": "Frankl survived Auschwitz and distilled the most liberating psychological truth ever written: you cannot always control your circumstances, but you always have absolute sovereignty over your attitude. Read when feeling adrift; trivial anxieties evaporate.",
+          "spark": "Finding a “why” that outlasts any collapse of the “how.”",
+          "cover": "01-frankl",
+          "best_for": "When feeling overwhelmed or losing your sense of purpose."
+        },
+        {
+          "num": "02",
+          "title": "The Count of Monte Cristo",
+          "author": "Alexandre Dumas",
+          "year": "1844",
+          "tag": "Classic Novel · Strategy",
+          "note": "The greatest adventure in literature, but really a masterclass in composure, patience, and playing the 20-year game. Edmond Dantès never panics; he calculates, accumulates leverage, and masters time.",
+          "spark": "“All human wisdom is contained in these two words: Wait and hope.”",
+          "cover": "02-dumas"
+        },
+        {
+          "num": "03",
+          "title": "Capitalism and Freedom",
+          "author": "Milton Friedman",
+          "year": "1962",
+          "tag": "Essay · Economics & Liberty",
+          "note": "Friedman cuts through bureaucratic rhetoric with razor clarity. Even without agreeing with every market conclusion, it forces you to question why we surrender so much daily autonomy to administrative inertia.",
+          "spark": "Economic freedom and personal autonomy are fundamentally inseparable.",
+          "cover": "03-friedman"
+        },
+        {
+          "num": "04",
+          "title": "Discourse on Voluntary Servitude",
+          "author": "Étienne de La Boétie",
+          "year": "1576",
+          "tag": "Political Philosophy",
+          "note": "Written by an 18-year-old in the 16th century, and still fresher than almost any modern commentary. His core insight is devastating: tyrants only hold power because the governed consent to obey them.",
+          "spark": "A short, electrifying shock to the system against passive compliance.",
+          "cover": "04-laboetie"
+        },
+        {
+          "num": "05",
+          "title": "On the Liberty of the Ancients compared with that of the Moderns",
+          "author": "Benjamin Constant",
+          "year": "1819",
+          "tag": "Speech / Essay · Political Theory",
+          "note": "Constant drew a brilliant distinction: ancient freedom was constant political mobilization; modern freedom is the sacred right to be left in peace to pursue your craft, family, and ideas without interference.",
+          "spark": "The foundational case for private sanctuary over permanent political noise.",
+          "cover": "05-constant"
         }
       ]
     },
     {
-      "num": "02",
       "title": "Systems, Power & Technology",
       "books": [
         {
-          "num": "02",
-          "cover": "09-branco.jpg",
+          "num": "06",
+          "title": "Manufacturing Consent",
+          "author": "Noam Chomsky & Edward S. Herman",
+          "year": "1988",
+          "tag": "Media Theory · Systems",
+          "note": "Breaks down the 5 structural filters through which mass media selects, frames, and purifies information. A diagnostic toolkit so you never consume news passively again.",
+          "spark": "Your personal mental firewall against manufactured consensus.",
+          "cover": "06-chomsky"
+        },
+        {
+          "num": "07",
+          "title": "Permanent Record",
+          "author": "Edward Snowden",
+          "year": "2019",
+          "tag": "Memoir · Cybersecurity",
+          "note": "Beyond NSA disclosures, this is about treating technology with ethical seriousness. Convenience is a trap: if you don’t maintain your tools, your tools will control you.",
+          "spark": "Treat your machines and privacy with the rigor of a craftsman.",
+          "cover": "07-snowden"
+        },
+        {
+          "num": "08",
+          "title": "Atlas Shrugged",
+          "author": "Ayn Rand",
+          "year": "1957",
+          "tag": "Philosophical Fiction · Individualism",
+          "note": "A monumental philosophical novel defending the primacy of reason, productive individual agency, and the creator’s mind against bureaucratic collectivism and coerced guilt.",
+          "spark": "The mind is the prime mover of human progress; never sacrifice your agency to unearned guilt.",
+          "cover": "08-rand"
+        },
+        {
+          "num": "09",
           "title": "Crépuscule",
           "author": "Juan Branco",
           "year": "2019",
-          "genre": "Investigative Pamphlet",
-          "scenario_label": "Best for:",
-          "scenario": "Inspecting the revolving doors and inner circles of French power.",
-          "verdict": "The internal mapping of Parisian elite networks and financial backing is documented with surgical precision. An unvarnished look at power.",
-          "takeaway": "An unvarnished anatomy of institutional incest in modern France."
+          "tag": "Investigative Pamphlet",
+          "note": "Whatever one thinks of Branco’s polemical tone, the structural breakdown of Parisian oligarchic networks and revolving doors is documented with surgical precision.",
+          "spark": "A candid look inside the closed circles and machinery of French power.",
+          "cover": "09-branco",
+          "best_for": "Inspecting the revolving doors and inner circles of French power."
+        },
+        {
+          "num": "10",
+          "title": "The Clash of Civilizations",
+          "author": "Samuel P. Huntington",
+          "year": "1996",
+          "tag": "Geopolitics · Macro-History",
+          "note": "Predicted that post-Cold War conflicts would run along civilizational and cultural fault lines. An indispensable macro-lens to decode modern international flashpoints.",
+          "spark": "A pragmatic compass for navigating global geopolitical fractures.",
+          "cover": "10-huntington"
+        },
+        {
+          "num": "11",
+          "title": "A Liberal Named Jesus",
+          "author": "Charles Gave",
+          "year": "2019",
+          "tag": "Essay · Economics & Agency",
+          "note": "An unorthodox, punchy read re-examining the Gospels through the lens of individual agency, capital allocation, and productive risk as moral duties.",
+          "spark": "A refreshing perspective on risk-taking, stewardship, and accountability.",
+          "cover": "11-gave"
         }
       ]
     },
     {
-      "num": "03",
-      "title": "Craft, Solitude & The Inner Fortress",
+      "title": "Solitude, Discipline & Craft",
       "books": [
         {
-          "num": "03",
-          "cover": "12-powys.jpg",
+          "num": "12",
           "title": "A Philosophy of Solitude",
           "author": "John Cowper Powys",
           "year": "1933",
-          "genre": "Inner Life",
-          "scenario_label": "Best for:",
-          "scenario": "Sinking into sensory calm during hyper-connected burnout.",
-          "verdict": "Practical rituals—walking alone, observing wind and stone, deliberate silence—to build an unshakeable inner fortress against external noise.",
-          "takeaway": "Cultivating your inner world is the only real shield against noise."
+          "tag": "Philosophy · Stillness",
+          "note": "Practical rituals for cultivating an unshakeable inner fortress: elemental pauses, walking alone, observing wind and stone. Solitude here is the deliberate cultivation of one's own mind.",
+          "spark": "The antidote to hyper-connected overstimulation and mental burnout.",
+          "cover": "12-powys",
+          "best_for": "Sinking into sensory calm during hyper-connected burnout."
+        },
+        {
+          "num": "13",
+          "title": "The Story of Art",
+          "author": "E. H. Gombrich",
+          "year": "1950",
+          "tag": "Art History · Visual Culture",
+          "note": "The antithesis of pretentious art theory. Gombrich writes like an attentive, wise friend strolling through an empty gallery, explaining how humanity learned to see light and perspective.",
+          "spark": "The single best companion book before visiting any museum in the world.",
+          "cover": "13-gombrich"
+        },
+        {
+          "num": "14",
+          "title": "Vertigo of Dependence",
+          "author": "Nathalie Sarthou-Lajus",
+          "year": "2012",
+          "tag": "Essay · Relationships",
+          "note": "A lucid reflection on the illusions of absolute self-sufficiency. Acknowledging our vulnerabilities and chosen bonds is the true starting point of emotional maturity.",
+          "spark": "A quiet mirror reminding us that true strength lies in accepting limits.",
+          "cover": "14-sarthou-lajus"
         }
       ]
     },
     {
-      "num": "04",
-      "title": "Great Narratives & Human Truths",
+      "title": "Great Narratives & The Human Condition",
       "books": [
         {
-          "num": "04",
-          "cover": "18-gary-promesse.jpg",
+          "num": "15",
+          "title": "Crime and Punishment",
+          "author": "Fyodor Dostoevsky",
+          "year": "1866",
+          "tag": "Psychological Novel",
+          "note": "Inside Raskolnikov’s feverish brain as intellectual arrogance disintegrates against the crushing weight of human conscience. Unbearably tense and utterly profound.",
+          "spark": "The greatest warning against elevating abstract ideology over human reality.",
+          "cover": "15-crime-punishment"
+        },
+        {
+          "num": "16",
+          "title": "The Brothers Karamazov",
+          "author": "Fyodor Dostoevsky",
+          "year": "1880",
+          "tag": "Classic Novel · Philosophy",
+          "note": "Dmitri (passion), Ivan (intellect), Alyosha (faith). Every fundamental conflict of human nature is played out in this family. The 'Grand Inquisitor' chapter alone is legendary.",
+          "spark": "The absolute pinnacle of psychological and philosophical literature.",
+          "cover": "16-karamazov"
+        },
+        {
+          "num": "17",
+          "title": "The Gambler",
+          "author": "Fyodor Dostoevsky",
+          "year": "1867",
+          "tag": "Novella · Addiction",
+          "note": "Written in just 26 days to pay off roulette debts, this short novel is a frantic dissection of how obsession and the illusion of control trap even sharp minds.",
+          "spark": "Fast, sharp, and brutally observant of the psychology of compulsive hope.",
+          "cover": "17-gambler"
+        },
+        {
+          "num": "18",
           "title": "Promise at Dawn",
           "author": "Romain Gary",
           "year": "1960",
-          "genre": "Autobiography",
-          "scenario_label": "Best for:",
-          "scenario": "Rekindling fierce filial love, courage, and literary panache.",
-          "verdict": "Gary’s unforgettable tribute to his mother’s boundless faith in him. Balances self-deprecating humor with extraordinary emotional gravity.",
-          "takeaway": "The kind of book that makes you put it down and call your mother."
+          "tag": "Autobiographical Novel",
+          "note": "Gary’s tribute to his mother’s boundless, irrational faith in him. It oscillates between laugh-out-loud humor and overwhelming emotional power.",
+          "spark": "The kind of book that makes you put it down and call your mother immediately.",
+          "cover": "18-gary-promesse",
+          "best_for": "Rekindling fierce filial love, courage, and literary panache."
+        },
+        {
+          "num": "19",
+          "title": "The Life Before Us",
+          "author": "Romain Gary (Émile Ajar)",
+          "year": "1975",
+          "tag": "Novel · Tenderness",
+          "note": "Narrated by young Momo veiling over Madame Rosa in Belleville. It has more genuine warmth, human solidarity, and streetwise wisdom in 200 pages than entire literary eras.",
+          "spark": "A masterclass in humor, tenderness, and finding beauty in the margins.",
+          "cover": "19-gary-vie"
+        },
+        {
+          "num": "20",
+          "title": "Around the World in Eighty Days",
+          "author": "Jules Verne",
+          "year": "1872",
+          "tag": "Adventure · Stoicism",
+          "note": "Read before hiking the GR20. Phileas Fogg’s mathematical composure and Passepartout’s loyalty make it the ultimate comfort read on resourcefulness and perseverance.",
+          "spark": "Pure Victorian rhythm, calm under pressure, and the joy of problem-solving.",
+          "cover": "20-verne"
+        },
+        {
+          "num": "21",
+          "title": "Small Country",
+          "author": "Gaël Faye",
+          "year": "2016",
+          "tag": "Contemporary Novel",
+          "note": "A luminous, heartbreaking story of childhood in Burundi shattered by war. Faye demonstrates how literature, music, and nature serve as the last shields of human dignity.",
+          "spark": "A poetic testament to memory and resilience in times of upheaval.",
+          "cover": "21-faye"
         }
       ]
     }

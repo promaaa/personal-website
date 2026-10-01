@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Generate Book Recommendation PDFs from LaTeX (XeTeX via tectonic)
+# Generate the bookshelf (HTML) and the reading guides (PDF) from books/*.json
 # ==============================================================================
 set -euo pipefail
 
@@ -18,11 +18,10 @@ if [ -z "$TECTONIC_BIN" ] || [ ! -x "$TECTONIC_BIN" ]; then
 fi
 
 DOCS_DIR="$ROOT_DIR/assets/docs"
-STATIC_FONTS="$ROOT_DIR/assets/fonts/static"
+FONT="$ROOT_DIR/assets/fonts/ComicShannsMono-Regular.ttf"
 
-if [ ! -d "$STATIC_FONTS" ]; then
-  echo "Error: static fonts missing at $STATIC_FONTS" >&2
-  echo "       Run: PYTHONPATH=.tools/pylib python3 .tools/instantiate-fonts.py" >&2
+if [ ! -f "$FONT" ]; then
+  echo "Error: font missing at $FONT" >&2
   exit 1
 fi
 
@@ -30,9 +29,9 @@ mkdir -p "$DOCS_DIR"
 
 echo "==> Using tectonic: $TECTONIC_BIN"
 
-# 1. Regenerate the LaTeX documents from the JSON data.
-echo "==> Generating LaTeX documents..."
-python3 "$ROOT_DIR/books/generate-latex.py"
+# 1. Regenerate the shelf pages and the LaTeX documents from the JSON data.
+echo "==> Generating the shelf and the LaTeX documents..."
+python3 "$ROOT_DIR/books/generate.py"
 
 # 2. Compile each language into assets/docs/, renaming to the published names.
 compile() {
