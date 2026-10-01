@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marc Duboc</title>
+  <meta name="description" content="Marc Duboc, robotics and embedded systems engineer in Seoul. Machines, essays and books.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23074652'/%3E%3Cpath d='M9 22V10l7 8 7-8v12' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preload" href="../shared/fonts/comic-shanns-mono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/hero-1280.webp" as="image" imagesrcset="img/hero-800.webp 800w, img/hero-1280.webp 1280w" imagesizes="(min-width: 56rem) 50vw, 100vw" fetchpriority="high">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="../shared/base.css">
+  <link rel="stylesheet" href="style.css">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#machines">Skip to the work</a>
+  <main class="diptych">
+    <figure class="panel">
+      <img class="hero" src="img/hero-1280.webp" srcset="img/hero-800.webp 800w, img/hero-1280.webp 1280w" sizes="(min-width: 56rem) 50vw, 100vw" width="853" height="1280" alt="Painting of a bearded astronomer at a huge brass telescope full of gears, under a full moon." fetchpriority="high">
+      <figcaption>The astronomer. AI-generated, <a href="https://pixabay.com/illustrations/ai-generated-steampunk-astronomer-9610010/">Suraajm20 on Pixabay</a>. <button class="pen" type="button" data-egg="galt">Who painted this?</button></figcaption>
+    </figure>
+    <div class="text">
+      <header class="top">
+        <nav aria-label="Sections">
+        <ul class="plain nav">
+          <li><a href="#machines">machines</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#writing">writing</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </nav>
+      <button class="pen theme" type="button" data-theme-toggle aria-pressed="false" hidden>dark</button>
+      </header>
+      <h1>Marc Duboc</h1>
+      <p class="intro">Robotics &amp; embedded systems engineer in Seoul. I build machines, write essays and read with a pencil.</p>
+      <section id="machines" aria-labelledby="machines-h">
+        <h2 id="machines-h">Machines, systems &amp; prototypes.</h2>
+        <ul class="plain items">
+          <li><h3>Ball-collecting robot</h3><p>Vision guidance and cascaded PI control, positioning within ±0.5–1 cm.</p><p class="links"><a href="https://github.com/promaaa/ball-collecting-robots">source</a></p></li>
+          <li><h3>SmartChess</h3><p>64 reed switches, a CNN that finds the board, and a chess engine running on a Raspberry Pi 5.</p><p class="links"><a href="https://github.com/promaaa/smart-chess">source</a> <a href="https://www.youtube.com/watch?v=5BC216xx9qs">video</a></p></li>
+          <li><h3>Nand2cpu</h3><p>A 16-bit ALU from first principles, in Verilog. The testbench checks that 7 + 8 = 15.</p><p class="links"><a href="https://github.com/promaaa/nand2cpu">source</a> <a href="https://www.youtube.com/watch?v=wIBkvQ6MfKQ">video</a></p></li>
+          <li><h3>OAI 5G CU–DU split</h3><p>OpenAirInterface on a Jetson Orin Nano and a Raspberry Pi 5, for lightweight UAV cells. Paper submitted, 2026.</p><p class="links"><a href="https://github.com/promaaa/kaust-5G-research">source</a> <a href="../../assets/docs/oai-5g-research-paper.pdf">paper (PDF)</a></p></li>
+          <li><h3>Evento</h3><p>Wallet-based ticketing on Solana Pay, built during a hackathon.</p><p class="links"><a href="https://github.com/promaaa/evento">source</a></p></li>
+        </ul>
+      </section>
+      <section id="about" aria-labelledby="about-h">
+        <h2 id="about-h">Built through theory. Tested in practice.</h2>
+        <p>I’m a master’s student in the 3D Vision Lab at Seoul National University. Before that I was a research intern at KAUST, working on efficient vision models, NVIDIA Jetson deployment and a 5G testbed for UAV relay cells.</p>
+        <p>I like turning messy physical problems into deterministic hardware with clean software on top: robots, control loops, PCBs, firmware.</p>
+        <p class="muted">Trained at IMT Atlantique (embedded systems &amp; robotics), after CPGE at Pierre Corneille (maths &amp; physics).</p>
+      </section>
+      <section id="writing" aria-labelledby="writing-h">
+        <h2 id="writing-h">Ideas in the margins.</h2>
+        <ul class="plain dated">
+          <li><a href="../../essays/unspoken-dialogue/"><span>The Unspoken Dialogue</span><time datetime="2025-10-17">Oct 2025</time></a></li>
+          <li><a href="../../essays/lucid-hope/"><span>Lucid Hope</span><time datetime="2025-07-03">Jul 2025</time></a></li>
+          <li><a href="../../essays/domestic-sovereignty/"><span>Domestic Sovereignty</span><time datetime="2025-01-20">Jan 2025</time></a></li>
+          <li><a href="../../essays/collapse-of-money/"><span>The Collapse of Money</span><time datetime="2024-08-14">Aug 2024</time></a></li>
+          <li><a href="../../essays/the-work-of-writing/"><span>The Work of Writing</span><time datetime="2023-05-09">May 2023</time></a></li>
+        </ul>
+        <p class="muted shelf">And the books I keep recommending: <a href="../../books/">the shelf</a>, with a reading guide in <a href="../../assets/docs/books-recommendations-en.pdf" hreflang="en">English</a> and <a href="../../assets/docs/livres-recommandes-fr.pdf" hreflang="fr" lang="fr">français</a>.</p>
+      </section>
+      <section id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Let’s build something worth testing.</h2>
+        <p class="email"><a href="mailto:marc.duboc@imt-atlantique.net">marc.duboc@imt-atlantique.net</a> <button class="pen copy" type="button" data-copy="marc.duboc@imt-atlantique.net" hidden>copy</button><span class="vh" role="status" aria-live="polite"></span></p>
+        <p class="links"><a href="https://github.com/promaaa">github</a> <a href="https://www.linkedin.com/in/marc-duboc1/">linkedin</a> <a href="https://x.com/proma__">x</a> <a href="https://www.youtube.com/@promaa_">youtube</a></p>
+      </section>
+      <footer class="foot muted">Set in Comic Shanns Mono. No framework, no tracker, no cookie.</footer>
+    </div>
+  </main>
+</body>
+</html>
