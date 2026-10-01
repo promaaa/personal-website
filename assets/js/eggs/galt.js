@@ -1,4 +1,4 @@
-// Galt: "Who painted this?" has no answer, like the other question.
+// Galt: "Who set the dots?" has no answer, like the other question.
 // Sound is opt-in (explicit button), always stoppable, and stops on close.
 import { dialog } from "../site.js";
 
@@ -33,7 +33,7 @@ function hum(on) {
 export default () => {
   const d = dialog("Who is John Galt?", `
     <h2>Who is John Galt?</h2>
-    <p>Nobody painted this picture, and nobody signed the motor either.</p>
+    <p>Aivazovsky painted the wave in 1850. A machine set the dots, and nobody signed the motor either.</p>
     <svg class="drawing" viewBox="0 0 300 220" role="img" aria-label="Line drawing of a motor: a collector above a toothed stator around a turning rotor.">
       <path d="M150 55V14M138 22h24M141 30h18M144 38h12"/>
       <circle cx="150" cy="125" r="70"/><circle cx="150" cy="125" r="58"/><path d="${teeth}"/>
