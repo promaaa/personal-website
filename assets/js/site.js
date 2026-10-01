@@ -139,7 +139,9 @@ const checkSelection = () => {
   const sel = getSelection();
   if (!sel || sel.isCollapsed || sel.toString().trim().length < 4) return;
   const el = [...document.querySelectorAll("[data-egg-select]")].find((n) => n.contains(sel.anchorNode) || n.contains(sel.focusNode));
-  if (el) hatch(el.dataset.eggSelect);
+  if (!el) return;
+  sel.removeAllRanges(); // a selection left behind would reopen the egg on the next click, even on Close
+  hatch(el.dataset.eggSelect);
 };
 document.addEventListener("pointerup", () => setTimeout(checkSelection));
 document.addEventListener("keyup", (e) => { if (e.shiftKey) checkSelection(); });
