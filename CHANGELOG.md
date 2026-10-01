@@ -16,10 +16,12 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 - `proposals/`: design directions for the v2 redesign. The previews are `noindex` and not linked from the live site. See `proposals/README.md`.
   - Round 1: Letters patent and Chart.
   - Round 2, hybrids of the two built around a real image: Sheet, Fiducial and As-built. Each has its own `tokens.css` and one easter egg, and they share one runtime (`proposals/shared/site.js`).
+  - Round 3, simple: Wall label, Diptych and Postcard. One comic monospace (Comic Shanns Mono, standing in for Comic Code) and one AI-generated painting each (Pixabay Content License), with a shared `base.css`.
 - This changelog.
 
 ### Removed
 - Marginalia, the round 1 direction rejected in review.
+- Rounds 1 and 2 removed from the tree after review; they remain in git history at `2a1b73d`.
 
 ## [1.0.0] - 2026-10-01
 
