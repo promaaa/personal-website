@@ -13,7 +13,8 @@
     "other_href": "../",
     "back": "Marc Duboc",
     "best_for": "Quand le lire",
-    "description": "Vingt et un livres que Marc Duboc recommande à ses amis : liberté, systèmes et pouvoir, solitude et artisanat, grands récits."
+    "description": "Vingt et un livres que Marc Duboc recommande à ses amis : liberté, systèmes et pouvoir, solitude et artisanat, grands récits.",
+    "count_one": "{n} livre"
   },
   "guide": {
     "masthead_tag": "Marc Duboc · Guide de Lecture",
