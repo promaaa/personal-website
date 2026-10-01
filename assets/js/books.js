@@ -5,6 +5,7 @@ if (form) {
   const count = form.querySelector("[data-count]");
   const empty = document.querySelector("[data-empty]");
   const books = [...document.querySelectorAll(".book")];
+  const plural = new Intl.PluralRules(document.documentElement.lang);
   form.hidden = false;
   form.addEventListener("submit", (e) => e.preventDefault());
   input.addEventListener("input", () => {
@@ -16,7 +17,8 @@ if (form) {
       if (hit) n++;
     }
     for (const s of document.querySelectorAll("#shelf section")) s.hidden = !s.querySelector(".book:not([hidden])");
-    count.textContent = count.dataset.template.replace("{n}", n);
+    const one = plural.select(n) === "one"; // "1 book", and in French "0 livre", "1 livre"
+    count.textContent = (one ? count.dataset.templateOne : count.dataset.template).replace("{n}", n);
     empty.hidden = n > 0;
     empty.textContent = n ? "" : empty.dataset.template.replace("{q}", input.value.trim());
   });
