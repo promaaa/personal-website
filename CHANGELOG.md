@@ -10,6 +10,11 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-10-01
+
+### Fixed
+- Dark theme colours. The running text was baby blue and the accent salmon pink on a cold black. The theme is now read by lamplight: warm black (`--stone-12`), parchment text (`--sand-1`), warm grey for secondary text (`--sand-4`) and a true red accent (`--red-6`). Colour stays on titles and accents, never on running text. Contrast still passes AA everywhere (axe, 0 violations).
+
 ## [2.0.0] - 2026-10-01
 
 The redesign: the Diptych layout with the Postcard voice, chosen from the third round of proposals.
@@ -59,7 +64,8 @@ The legacy easter-egg portfolio, as published on promaa.tech.
 - Three cinematic easter eggs: Galt, Monte Cristo, Assange.
 - Five essays, the bilingual book shelf, and the LaTeX reading guides (EN/FR).
 
-[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/promaaa/personal-website/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/promaaa/personal-website/compare/v1.0.0...v2.0.0
 [2.0.0-alpha.1]: https://github.com/promaaa/personal-website/compare/v1.0.0...v2.0.0-alpha.1
 [1.0.0]: https://github.com/promaaa/personal-website/releases/tag/v1.0.0
