@@ -10,6 +10,14 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.0.2] - 2026-10-01
+
+### Fixed
+- The shelf search said "1 books". Counts now use `Intl.PluralRules`: "1 book", and in French "0 livre", "1 livre".
+
+### Changed
+- README: a link to the live site, a release badge, and a gallery of the main features (both themes, three phones, an essay, the shelf search, the PDF guide), plus HTTPS notes for a Cloudflare-proxied domain.
+
 ## [2.0.1] - 2026-10-01
 
 ### Fixed
@@ -64,7 +72,8 @@ The legacy easter-egg portfolio, as published on promaa.tech.
 - Three cinematic easter eggs: Galt, Monte Cristo, Assange.
 - Five essays, the bilingual book shelf, and the LaTeX reading guides (EN/FR).
 
-[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/promaaa/personal-website/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/promaaa/personal-website/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/promaaa/personal-website/compare/v1.0.0...v2.0.0
 [2.0.0-alpha.1]: https://github.com/promaaa/personal-website/compare/v1.0.0...v2.0.0-alpha.1
