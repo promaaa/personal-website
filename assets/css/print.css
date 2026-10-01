@@ -1,0 +1,17 @@
+/* Print: the page becomes a plain letter. Loaded with media="print", so it
+   never blocks rendering on screen. Colours come from the print block of
+   tokens.css. */
+.top, .skip, .painting, .pen, [data-postmarks], .struck, [data-after-wait], .search { display: none !important; }
+.has-panel .page { margin: 0; padding: 0; max-width: none; }
+a { text-decoration: none; }
+.prose a[href^="http"]::after, .items a[href^="http"]::after { content: " <" attr(href) ">"; font-size: var(--step--1); }
+section, .book { break-inside: avoid; }
+/* Gombrich: the first sentence of The Story of Art, only on paper. */
+main::after {
+  content: "There really is no such thing as Art. There are only artists. (E. H. Gombrich, The Story of Art)";
+  display: block;
+  margin-block-start: var(--space-l);
+  padding-block-start: var(--space-2xs);
+  border-block-start: var(--hairline) solid var(--ink);
+  font-size: var(--step--1);
+}
