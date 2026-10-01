@@ -1,86 +1,262 @@
 {
   "lang": "fr",
-  "track_1": "Souveraineté, Liberté & Clarté",
-  "track_2": "Systèmes, Pouvoir & Technologie",
-  "track_3": "Discipline, Solitude & Art",
-  "track_4": "Grands Récits & Vérités Humaines",
-  "masthead_tag": "Marc Duboc · Guide de Lecture",
-  "masthead_location": "Sélection personnelle pour des amis · 2026",
-  "masthead_title": "Guide du Lecteur : Pensée, Liberté & Souveraineté",
-  "prologue": "« J’ai conçu ce guide pour les amis qui me demandent quelles lectures ont véritablement structuré ma manière de penser, d'entreprendre et de vivre. Ce ne sont pas des livres pour faire joli sur une étagère ; ce sont des textes à fort effet de levier qui m'ont apporté clarté mentale, discipline et souveraineté. Lisez un crayon à la main, gardez ce qui vous sert, laissez le reste. »",
-  "prologue_author": "— Marc Duboc (@promaa) · Paris, France",
-  "colophon_left": "Marc Duboc · Guide de Lecture · Paris, France",
-  "colophon_right": "marc.duboc.pro@proton.me · github.com/promaaa",
-  "tracks": [
+  "page": {
+    "title": "Livres que je recommanderais à un ami",
+    "intro": "« J’ai rassemblé cette sélection pour les amis qui me demandent quelles lectures ont véritablement structuré ma manière de penser, d'entreprendre et de vivre. Ce ne sont pas des livres pour faire joli sur une étagère ou valider un cursus académique. Ce sont les textes que je garde à portée de main — ceux qui m'ont forgé un pare-feu intellectuel contre le bruit ambiant, appris la patience dans les projets au long cours, ou rappelé pourquoi la liberté, la solitude et l'artisanat sont essentiels. Piochez-y ce qui résonne en vous, laissez le reste. »",
+    "signature": "Marc Duboc (@promaa), Séoul",
+    "search_label": "Chercher dans la bibliothèque",
+    "search_placeholder": "titre, auteur, idée…",
+    "count": "{n} livres",
+    "none": "Rien dans la bibliothèque ne correspond à « {q} ».",
+    "guide_label": "Guide de lecture (PDF)",
+    "other_lang": "Read in English",
+    "other_href": "../",
+    "back": "Marc Duboc",
+    "best_for": "Quand le lire",
+    "description": "Vingt et un livres que Marc Duboc recommande à ses amis : liberté, systèmes et pouvoir, solitude et artisanat, grands récits."
+  },
+  "guide": {
+    "masthead_tag": "Marc Duboc · Guide de Lecture",
+    "masthead_location": "Sélection personnelle pour des amis · 2026",
+    "masthead_title": "Guide du Lecteur : Pensée, Liberté & Souveraineté",
+    "prologue": "« J’ai conçu ce guide pour les amis qui me demandent quelles lectures ont véritablement structuré ma manière de penser, d'entreprendre et de vivre. Ce ne sont pas des livres pour faire joli sur une étagère ; ce sont des textes à fort effet de levier qui m'ont apporté clarté mentale, discipline et souveraineté. Lisez un crayon à la main, gardez ce qui vous sert, laissez le reste. »",
+    "prologue_author": "Marc Duboc (@promaa), Séoul",
+    "colophon_left": "Marc Duboc · Guide de Lecture · Séoul",
+    "colophon_right": "marc.duboc@imt-atlantique.net · promaa.tech",
+    "pdf": "../../assets/docs/livres-recommandes-fr.pdf"
+  },
+  "sections": [
     {
-      "num": "01",
-      "title": "Souveraineté, Liberté & Clarté",
+      "title": "Socle, Lucidité & Liberté",
       "books": [
         {
           "num": "01",
-          "cover": "01-frankl.jpg",
           "title": "Découvrir un sens à sa vie",
           "author": "Viktor E. Frankl",
           "year": "1946",
-          "genre": "Logothérapie",
-          "scenario_label": "Quand le lire :",
-          "scenario": "En période de doute ou de perte de cap intérieur.",
-          "verdict": "Frankl a survécu à Auschwitz pour en tirer la vérité ultime : on ne choisit pas ce qui arrive, mais on garde la souveraineté sur son attitude intérieure.",
-          "takeaway": "Trouver un « pourquoi » capable de résister à l'effondrement de tous les « comment »."
+          "tag": "Récit & Psychologie",
+          "note": "Frankl a survécu à Auschwitz pour en tirer la plus libératrice des leçons : on ne choisit pas ce qui nous arrive, mais on garde toujours la souveraineté absolue sur son attitude intérieure. À lire quand tout paraît confus ; le superflu s'évapore.",
+          "spark": "Trouver un « pourquoi » qui résiste à l'effondrement de tous les « comment ».",
+          "cover": "01-frankl",
+          "best_for": "En période de doute ou de perte de cap intérieur."
+        },
+        {
+          "num": "02",
+          "title": "Le Comte de Monte-Cristo",
+          "author": "Alexandre Dumas",
+          "year": "1844",
+          "tag": "Grand Roman · Stratégie",
+          "note": "La plus grande épopée littéraire, mais surtout une formidable leçon de sang-froid et de maîtrise du temps. Edmond Dantès ne panique jamais : il prépare, accumule ses leviers et sait attendre 20 ans.",
+          "spark": "« Toute la sagesse humaine est dans ces deux mots : Attendre et espérer. »",
+          "cover": "02-dumas"
+        },
+        {
+          "num": "03",
+          "title": "Capitalisme et liberté",
+          "author": "Milton Friedman",
+          "year": "1962",
+          "tag": "Essai · Économie & Liberté",
+          "note": "Friedman décape les illusions bureaucratiques avec clarté. Même sans partager tous ses préceptes, l'ouvrage pousse à questionner pourquoi nous confions tant d'arbitrages de notre autonomie à l'inertie administrative.",
+          "spark": "Comprendre le lien indissociable entre liberté économique et politique.",
+          "cover": "03-friedman"
+        },
+        {
+          "num": "04",
+          "title": "Discours de la servitude volontaire",
+          "author": "Étienne de La Boétie",
+          "year": "1576",
+          "tag": "Philosophie politique",
+          "note": "Écrit par un jeune homme de 18 ans au XVIe siècle, et plus acéré que les commentaires actuels. Son diagnostic est implacable : les tyrans n'ont d'emprise que celle que nous acceptons de leur céder.",
+          "spark": "Une décharge électrique de 40 pages contre les réflexes d'obéissance passive.",
+          "cover": "04-laboetie"
+        },
+        {
+          "num": "05",
+          "title": "De la liberté des Anciens comparée à celle des Modernes",
+          "author": "Benjamin Constant",
+          "year": "1819",
+          "tag": "Discours / Essai",
+          "note": "Constant a posé une distinction lumineuse : la liberté des Anciens était l'agitation politique collective ; celle des Modernes est le droit sacré d'être laissé en paix dans sa sphère privée pour créer sans tutelle.",
+          "spark": "Le socle fondateur pour préserver son sanctuaire intime face au bruit public.",
+          "cover": "05-constant"
         }
       ]
     },
     {
-      "num": "02",
       "title": "Systèmes, Pouvoir & Technologie",
       "books": [
         {
-          "num": "02",
-          "cover": "09-branco.jpg",
+          "num": "06",
+          "title": "La Fabrication du consentement",
+          "author": "Noam Chomsky & Edward S. Herman",
+          "year": "1988",
+          "tag": "Médias & Systèmes",
+          "note": "Démontent les 5 filtres structurels à travers lesquels l'information de masse est calibrée, cadrée et filtrée. Une grille d'analyse chirurgicale pour ne plus consommer l'actualité de façon crédule.",
+          "spark": "Le pare-feu mental indispensable contre les récits manufacturés.",
+          "cover": "06-chomsky"
+        },
+        {
+          "num": "07",
+          "title": "Mémoires vives",
+          "author": "Edward Snowden",
+          "year": "2019",
+          "tag": "Cybersécurité & Récit",
+          "note": "Au-delà des révélations sur la surveillance globale, ce livre pose une véritable éthique de l'ingénieur. Le confort numérique est un piège si l'on n'administre pas rigoureusement ses propres systèmes.",
+          "spark": "Traiter ses machines, ses clés et sa vie privée avec la rigueur d'un artisan.",
+          "cover": "07-snowden"
+        },
+        {
+          "num": "08",
+          "title": "La Grève (Atlas Shrugged)",
+          "author": "Ayn Rand",
+          "year": "1957",
+          "tag": "Roman philosophique · Individualisme & Raison",
+          "note": "Fresque philosophique monumentale explorant la souveraineté individuelle, le génie créateur et la primauté de la raison face au collectivisme bureaucratique. Une défense sans compromis de l'esprit comme moteur du monde.",
+          "spark": "L'esprit rationnel est le moteur du monde ; ne jamais céder sa souveraineté à la culpabilité imméritée.",
+          "cover": "08-rand"
+        },
+        {
+          "num": "09",
           "title": "Crépuscule",
           "author": "Juan Branco",
           "year": "2019",
-          "genre": "Pamphlet d'Investigation",
-          "scenario_label": "Quand le lire :",
-          "scenario": "Pour comprendre les cercles de pouvoir et l'entre-soi.",
-          "verdict": "La cartographie des liens d'intérêts et de l'entre-soi des élites parisiennes y est documentée de façon clinique et sans fard.",
-          "takeaway": "Une plongée sans fard dans les rouages et la consanguinité des cercles de décision."
+          "tag": "Pamphlet d'investigation",
+          "note": "Au-delà du style polémique assumé, la cartographie des liens d'intérêts et de l'entre-soi des élites parisiennes y est documentée de façon clinique.",
+          "spark": "Une plongée sans fard dans la consanguinité des cercles de décision en France.",
+          "cover": "09-branco",
+          "best_for": "Pour comprendre les cercles de pouvoir et l'entre-soi."
+        },
+        {
+          "num": "10",
+          "title": "Le Choc des civilisations",
+          "author": "Samuel P. Huntington",
+          "year": "1996",
+          "tag": "Géopolitique",
+          "note": "Huntington avait pressenti que les fractures se joueraient sur des lignes culturelles et civilisationnelles profondes. Une clé de lecture macroscopique souvent confirmée par les crises actuelles.",
+          "spark": "Une boussole robuste pour décrypter les tensions internationales sans naïveté.",
+          "cover": "10-huntington"
+        },
+        {
+          "num": "11",
+          "title": "Un libéral nommé Jésus",
+          "author": "Charles Gave",
+          "year": "2019",
+          "tag": "Essai · Économie & Risque",
+          "note": "Une lecture revigorante et iconoclaste des Évangiles sous le prisme de la responsabilité individuelle, de l'allocation des talents et de la prise de risque productive comme devoir moral.",
+          "spark": "Une réhabilitation morale du courage d'entreprendre et de la liberté d'action.",
+          "cover": "11-gave"
         }
       ]
     },
     {
-      "num": "03",
-      "title": "Discipline, Solitude & Art",
+      "title": "Solitude, Discipline & Art",
       "books": [
         {
-          "num": "03",
-          "cover": "12-powys.jpg",
+          "num": "12",
           "title": "Une philosophie de la solitude",
           "author": "John Cowper Powys",
           "year": "1933",
-          "genre": "Vie Intérieure",
-          "scenario_label": "Quand le lire :",
-          "scenario": "En période de surcharge mentale et d'hyper-connexion.",
-          "verdict": "Des rituels concrets pour forger sa citadelle intérieure : marches solitaires, silence et reconnexion aux éléments bruts.",
-          "takeaway": "Cultiver son monde intérieur est le seul rempart réel contre le bruit du monde."
+          "tag": "Philosophie pratique",
+          "note": "Exercices concrets pour forger sa citadelle intérieure : marches solitaires, attention au vent et aux pierres, silence. La solitude y est célébrée comme le sanctuaire de la liberté d'esprit.",
+          "spark": "L'antidote absolu à la surcharge mentale et à l'hyper-sollicitation permanente.",
+          "cover": "12-powys",
+          "best_for": "En période de surcharge mentale et d'hyper-connexion."
+        },
+        {
+          "num": "13",
+          "title": "Histoire de l’art",
+          "author": "E. H. Gombrich",
+          "year": "1950",
+          "tag": "Histoire de l'art",
+          "note": "L'exact opposé du jargon universitaire. Gombrich vous prend par le bras avec bienveillance dans une galerie déserte pour expliquer comment les peintres ont apprivoisé la lumière et l'espace.",
+          "spark": "Le meilleur compagnon de route avant n'importe quelle visite de musée au monde.",
+          "cover": "13-gombrich"
+        },
+        {
+          "num": "14",
+          "title": "Vertige de la dépendance",
+          "author": "Nathalie Sarthou-Lajus",
+          "year": "2012",
+          "tag": "Essai philosophique",
+          "note": "Méditation lumineuse qui démonte le mythe de l'autosuffisance totale. Reconnaître nos liens et nos fragilités est la condition même d'une liberté lucide et mature.",
+          "spark": "Un miroir apaisant rappelant que notre humanité repose sur nos dépendances choisies.",
+          "cover": "14-sarthou-lajus"
         }
       ]
     },
     {
-      "num": "04",
-      "title": "Grands Récits & Vérités Humaines",
+      "title": "Grands Récits & Condition Humaine",
       "books": [
         {
-          "num": "04",
-          "cover": "18-gary-promesse.jpg",
+          "num": "15",
+          "title": "Crime et Châtiment",
+          "author": "Fiodor Dostoïevski",
+          "year": "1866",
+          "tag": "Roman psychologique",
+          "note": "Dans l'esprit fiévreux de Raskolnikov alors que sa théorie de l'homme supérieur vole en éclats face à la réalité morale de son acte. Inflexible et bouleversant.",
+          "spark": "Le plus puissant réquisitoire contre l'arrogance théorique déconnectée du réel.",
+          "cover": "15-crime-punishment"
+        },
+        {
+          "num": "16",
+          "title": "Les Frères Karamazov",
+          "author": "Fiodor Dostoïevski",
+          "year": "1880",
+          "tag": "Chef-d'œuvre classique",
+          "note": "Dmitri (la passion), Ivan (l'intellect), Aliocha (la foi). Tous les déchirements de l'âme humaine se disputent dans cette famille. Le *Grand Inquisiteur* reste un sommet universel.",
+          "spark": "Le sommet de la littérature mondiale sur la liberté morale et la fraternité.",
+          "cover": "16-karamazov"
+        },
+        {
+          "num": "17",
+          "title": "Le Joueur",
+          "author": "Fiodor Dostoïevski",
+          "year": "1867",
+          "tag": "Roman court · Addiction",
+          "note": "Rédigé en 26 jours pour rembourser des dettes de roulette, ce récit nerveux dissèque avec acuité la mécanique du jeu et l'illusion de contrôle qui emporte la raison.",
+          "spark": "Un récit fulgurant sur l'engrenage de l'obsession et de l'espérance compulsive.",
+          "cover": "17-gambler"
+        },
+        {
+          "num": "18",
           "title": "La Promesse de l’aube",
           "author": "Romain Gary",
           "year": "1960",
-          "genre": "Autobiographie",
-          "scenario_label": "Quand le lire :",
-          "scenario": "Pour redécouvrir l'amour filial inconditionnel et le panache.",
-          "verdict": "L'hommage vibrant de Gary à sa mère. Un équilibre parfait entre autodérision jubilatoire, panache et émotion brute.",
-          "takeaway": "Le livre qui donne immédiatement envie d'appeler sa mère dès la dernière page."
+          "tag": "Roman autobiographique",
+          "note": "L'hommage bouleversant de Gary à sa mère, dont la foi folle et démesurée l'a porté toute sa vie. Un équilibre parfait entre panache, autodérision et émotion pure.",
+          "spark": "Le livre qui donne immédiatement envie d'appeler sa mère dès la dernière page.",
+          "cover": "18-gary-promesse",
+          "best_for": "Pour redécouvrir l'amour filial inconditionnel et le panache."
+        },
+        {
+          "num": "19",
+          "title": "La Vie devant soi",
+          "author": "Romain Gary (Émile Ajar)",
+          "year": "1975",
+          "tag": "Roman · Belleville",
+          "note": "Raconté par Momo veillant sur Madame Rosa à Belleville. Il y a plus de générosité authentique, d'humour tendre et d'humanité dans ces 200 pages que dans des bibliothèques entières.",
+          "spark": "Une merveille d'argot, de pudeur et d'amour dans la marge.",
+          "cover": "19-gary-vie"
+        },
+        {
+          "num": "20",
+          "title": "Le Tour du monde en 80 jours",
+          "author": "Jules Verne",
+          "year": "1872",
+          "tag": "Aventure & Flegme",
+          "note": "Relu avant de parcourir le GR20. Le flegme imperturbable de Phileas Fogg et le dévouement de Passepartout en font le livre réconfortant par excellence sur la méthode et la ténacité.",
+          "spark": "Un concentré d'optimisme, de précision d'horloger et de plaisir de l'aventure.",
+          "cover": "20-verne"
+        },
+        {
+          "num": "21",
+          "title": "Petit Pays",
+          "author": "Gaël Faye",
+          "year": "2016",
+          "tag": "Roman contemporain",
+          "note": "L'enfance buissonnière de Gaby au Burundi fauchée par la guerre civile. Faye montre avec une grâce poétique rare comment les livres, les arbres et la mémoire protègent la dignité humaine.",
+          "spark": "Un hymne déchirant à la beauté comme ultime rempart contre la barbarie.",
+          "cover": "21-faye"
         }
       ]
     }
