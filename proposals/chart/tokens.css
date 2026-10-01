@@ -1,0 +1,157 @@
+/* ==========================================================================
+   CHART · tokens.css
+   Single source of every design value used by this proposal.
+   - Type & space: Utopia (utopia-core 1.6, the utopia.fyi engine)
+       type  17px@320 → 19px@1440, ×1.2 → ×1.25
+       space base 17px → 19px
+   - Colour names & values: Open Props 1.7 (gray, stone, sand, choco,
+     blue, pink), mixed with color-mix() for the dusk sea.
+   - Motion: Kinetics cubic-beziers sampled into linear() (Kinetics
+     publishes no linear() strings): glide, in-out, spring.
+   Breakpoint used literally in style.css (media queries cannot read vars):
+       --bp-wide: 60rem  (tables become tables; legs sit beside prose)
+   ========================================================================== */
+
+@font-face { font-family: "Newsreader"; src: url("fonts/newsreader.woff2") format("woff2"); font-weight: 400 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("fonts/newsreader-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible Mono"; src: url("fonts/atkinson-mono.woff2") format("woff2"); font-weight: 400 600; font-style: normal; font-display: swap; }
+
+:root {
+  /* ---- Open Props base colours (trimmed) ---- */
+  --stone-0: #f8fafb;
+  --stone-5: #b1b6b9;
+  --gray-7: #495057;
+  --gray-12: #030507;
+  --sand-1: #e6e4dc;
+  --sand-11: #252521;
+  --choco-0: #fff8dc;
+  --blue-0: #e7f5ff;
+  --blue-4: #4dabf7;
+  --blue-9: #1864ab;
+  --blue-12: #0d375e;
+  --pink-4: #f783ac;
+  --pink-9: #a61e4d;
+
+  /* ---- Semantic colours: day chart (white sea, buff land, magenta aids) ---- */
+  --sea: var(--stone-0);
+  --shoal: var(--blue-0);       /* shallow-water tint */
+  --land: var(--choco-0);       /* land tint, used for the cartouche */
+  --ink: var(--gray-12);
+  --ink-2: var(--gray-7);
+  --depth: var(--blue-9);       /* graticule and soundings */
+  --magenta: var(--pink-9);     /* the single accent: route, aids, links */
+  --magenta-wash: color-mix(in oklab, var(--pink-9) 10%, transparent);
+  --grid: color-mix(in oklab, var(--blue-9) 9%, transparent);
+  --scrim: color-mix(in oklab, var(--gray-12) 55%, transparent);
+
+  /* ---- Type (Utopia) ---- */
+  --step-6: clamp(3.1726rem, 2.7848rem + 1.9391vw, 4.53rem);
+  --step-4: clamp(2.2032rem, 2.0044rem + 0.9942vw, 2.8992rem);
+  --step-2: clamp(1.53rem, 1.437rem + 0.465vw, 1.8555rem);
+  --step-1: clamp(1.275rem, 1.2152rem + 0.2991vw, 1.4844rem);
+  --step-0: clamp(1.0625rem, 1.0268rem + 0.1786vw, 1.1875rem);
+  --step--1: clamp(0.8854rem, 0.867rem + 0.0923vw, 0.95rem);
+  --step--2: clamp(0.7378rem, 0.7315rem + 0.0316vw, 0.76rem);
+
+  --font-text: "Newsreader", "Iowan Old Style", Georgia, serif;   /* land: roman; water: italic */
+  --font-data: "Atkinson Hyperlegible Mono", "Newsreader", ui-monospace, monospace; /* positions only; ′ ″ fall back to Newsreader */
+  --leading-tight: 1.1;
+  --leading-text: 1.55;
+  --leading-data: 1.35;
+  --tracking-display: -0.02em;
+  --figures: "lnum" 1, "tnum" 1;
+
+  /* ---- Space (Utopia) ---- */
+  --space-3xs: clamp(0.25rem, 0.2321rem + 0.0893vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5446rem + 0.0893vw, 0.625rem);
+  --space-xs: clamp(0.8125rem, 0.7946rem + 0.0893vw, 0.875rem);
+  --space-s: clamp(1.0625rem, 1.0268rem + 0.1786vw, 1.1875rem);
+  --space-m: clamp(1.625rem, 1.5714rem + 0.2679vw, 1.8125rem);
+  --space-l: clamp(2.125rem, 2.0536rem + 0.3571vw, 2.375rem);
+  --space-xl: clamp(3.1875rem, 3.0804rem + 0.5357vw, 3.5625rem);
+  --space-2xl: clamp(4.25rem, 4.1071rem + 0.7143vw, 4.75rem);
+  --space-s-m: clamp(1.0625rem, 0.8482rem + 1.0714vw, 1.8125rem);
+  --space-s-l: clamp(1.0625rem, 0.6875rem + 1.875vw, 2.375rem);
+  --space-l-xl: clamp(2.125rem, 1.7143rem + 2.0536vw, 3.5625rem);
+  --space-xl-2xl: clamp(3.1875rem, 2.7411rem + 2.2321vw, 4.75rem);
+
+  /* ---- Chart geometry ---- */
+  --chart: 78rem;
+  --measure: 38rem;
+  --sheet-min: 52rem;          /* the plotting sheet scrolls sideways below this */
+  --graticule: 6rem 4rem;      /* bg.ibelick "large grid", in chart blue */
+  --hit: 2.75rem;
+  --dialog-width: 40rem;
+
+  /* ---- Lines & radii (Open Props) ---- */
+  --hairline: 1px;
+  --border-size-2: 2px;
+  --radius-2: 5px;
+  --underline-offset: 0.22em;
+  --svg-stroke: 1.2;           /* drawing units */
+  --svg-label: 15px;           /* drawing units */
+  --svg-small: 12px;
+  --pen-width: 6;              /* mask pen that reveals the route */
+  --mask-reveal: #fff;         /* luminance mask: white = visible */
+  --tick-major: 7;             /* compass rose, every 10° */
+  --tick-minor: 3;             /* compass rose, every 5° */
+  --dash-tick-major: 0.8 9.2;  /* pathLength 360 → 36 ticks */
+  --dash-tick-minor: 0.5 4.5;  /* pathLength 360 → 72 ticks */
+  --dash-route: 8 5;
+  --dash-doubtful: 2 2;        /* E.D. outline */
+  --graticule-opacity: 0.35;
+  --halo: 4px;                 /* label halo, drawing units */
+  --notice-col: 5.5ch;
+  --label-col: 10rem;
+
+  /* ---- Motion ---- */
+  /* quick: Kinetics "glide" cubic-bezier(0.16, 1, 0.3, 1) */
+  --ease-quick: linear(0 0%, 0.341 6.3%, 0.577 12.5%, 0.729 18.8%, 0.826 25%, 0.888 31.3%, 0.928 37.5%, 0.954 43.8%, 0.972 50%, 0.983 56.3%, 0.99 62.5%, 0.995 68.8%, 0.998 75%, 0.999 81.3%, 1 87.5%, 1 93.8%, 1 100%);
+  /* standard: Kinetics "underline draw" cubic-bezier(0.65, 0, 0.35, 1), the route being plotted */
+  --ease-standard: linear(0 0%, 0.003 6.3%, 0.014 12.5%, 0.036 18.8%, 0.071 25%, 0.125 31.3%, 0.208 37.5%, 0.332 43.8%, 0.5 50%, 0.668 56.3%, 0.792 62.5%, 0.875 68.8%, 0.929 75%, 0.964 81.3%, 0.986 87.5%, 0.997 93.8%, 1 100%);
+  /* expressive: Kinetics spring(280, 18) cubic-bezier(0.34, 1.56, 0.64, 1), the compass settling */
+  --ease-expressive: linear(0 0%, 0.216 5%, 0.404 10%, 0.566 15%, 0.703 20%, 0.816 25%, 0.907 30%, 0.978 35%, 1.03 40%, 1.066 45%, 1.087 50%, 1.097 55%, 1.097 60%, 1.089 65%, 1.076 70%, 1.06 75%, 1.042 80%, 1.026 85%, 1.013 90%, 1.003 95%, 1 100%);
+  --dur-quick: 160ms;
+  --dur-standard: 1600ms;
+  --dur-expressive: 1200ms;
+  --rose-swing: -16deg;
+  --scale-enter: 0.96;
+
+  /* ---- Wait and hope ---- */
+  --idle-ms: 45000;            /* read by site.js: stillness before the islet emerges */
+}
+
+/* ---- Dusk: the dimmed palette chart displays switch to after sunset ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sea: color-mix(in oklab, var(--blue-12) 30%, var(--gray-12));
+    --shoal: color-mix(in oklab, var(--blue-12) 55%, var(--gray-12));
+    --land: var(--sand-11);
+    --ink: var(--sand-1);
+    --ink-2: var(--stone-5);
+    --depth: var(--blue-4);
+    --magenta: var(--pink-4);
+    --magenta-wash: color-mix(in oklab, var(--pink-4) 14%, transparent);
+    --grid: color-mix(in oklab, var(--blue-4) 10%, transparent);
+  }
+}
+:root[data-theme="dark"] {
+  --sea: color-mix(in oklab, var(--blue-12) 30%, var(--gray-12));
+  --shoal: color-mix(in oklab, var(--blue-12) 55%, var(--gray-12));
+  --land: var(--sand-11);
+  --ink: var(--sand-1);
+  --ink-2: var(--stone-5);
+  --depth: var(--blue-4);
+  --magenta: var(--pink-4);
+  --magenta-wash: color-mix(in oklab, var(--pink-4) 14%, transparent);
+  --grid: color-mix(in oklab, var(--blue-4) 10%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-standard: 1ms;
+    --dur-expressive: 200ms;
+    --rose-swing: 0deg;
+    --scale-enter: 1;
+  }
+}
