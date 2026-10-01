@@ -70,8 +70,13 @@ section { padding-block-start: var(--space-2xl); }
 h2 { font-size: var(--step-2); margin-block-end: var(--space-m); }
 section > p + p { margin-block-start: var(--space-s); }
 
-/* ---- Painting: a postcard in the flow, a fixed half-screen panel from 56rem ---- */
+/* ---- Painting: a postcard in the flow; a fixed panel on wide, landscape screens ----
+   The postcard never grows taller than the screen (phones held sideways).
+   The panel only appears when the screen is wider than tall, so tablets in
+   portrait keep the postcard, and it stops widening past 95% of the screen
+   height, so ultra-wide screens do not crop the painting to a strip. */
 .painting {
+  inline-size: fit-content;
   margin-block: var(--space-xl) 0;
   padding: var(--space-xs) var(--space-xs) var(--space-s);
   background: var(--card);
@@ -79,21 +84,22 @@ section > p + p { margin-block-start: var(--space-s); }
   box-shadow: var(--shadow-2);
   rotate: var(--tilt);
 }
-.painting img { width: 100%; }
-.painting figcaption { margin-block-start: var(--space-2xs); font-size: var(--step--1); color: var(--ink-2); }
-@media (min-width: 56rem) {
-  .has-panel .page { width: auto; margin-inline: 50% 0; padding-inline: var(--space-xl); max-width: none; }
-  .has-panel .page > * { max-width: var(--measure); }
+.painting img { inline-size: auto; max-block-size: 75vh; max-block-size: 75svh; }
+.painting figcaption { max-inline-size: 0; min-inline-size: 100%; margin-block-start: var(--space-2xs); font-size: var(--step--1); color: var(--ink-2); }
+.painting.ink img { filter: var(--ink-filter); }
+@media (min-width: 56rem) and (min-aspect-ratio: 5/4) {
+  .has-panel .page { width: auto; margin-inline: var(--panel-width) 0; padding-inline: var(--space-xl); max-width: none; }
+  .has-panel .page > * { max-width: var(--measure); margin-inline: auto; } /* the letter sits centred in the space left */
   .painting {
-    position: fixed; inset: 0 50% 0 0;
+    position: fixed; inset: 0 auto 0 0; inline-size: var(--panel-width);
     margin: 0; padding: 0;
     border-radius: 0; box-shadow: none; rotate: none;
     background: var(--card);
   }
-  .painting img { width: 100%; height: 100%; object-fit: cover; object-position: var(--panel-focus); }
+  .painting img { inline-size: 100%; block-size: 100%; max-block-size: none; object-fit: cover; object-position: var(--panel-focus); }
   .painting figcaption {
     position: absolute; inset-inline-start: var(--space-s); inset-block-end: var(--space-s);
-    max-width: calc(100% - var(--space-l));
+    min-inline-size: 0; max-inline-size: calc(100% - var(--space-l));
     margin: 0; padding: var(--space-2xs) var(--space-xs);
     background: var(--paper); border-radius: var(--radius);
   }

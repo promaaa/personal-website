@@ -9,9 +9,10 @@
    Colour         Open Props 1.7 values (stone, sand, gray, blue, red), trimmed
    Motion         three tokens; curves from Kinetics (kinetics.colorion.co),
                   which publishes cubic-beziers only, sampled into linear()
-   Breakpoint     56rem: the painting moves to a fixed half-screen panel.
-                  Media queries cannot read custom properties, so this one
-                  value is repeated literally in site.css.
+   Breakpoint     56rem and a landscape screen (5/4 or wider): the painting
+                  moves to a fixed panel on the left. Media queries cannot
+                  read custom properties, so this one query is repeated
+                  literally in site.css and in each image's sizes.
    ========================================================================== */
 
 @font-face {
@@ -46,6 +47,7 @@
   --rule: var(--gray-4);
   --accent: var(--red-9);
   --scrim: color-mix(in oklab, var(--gray-12) 60%, transparent);
+  --ink-filter: none;        /* prints drawn in ink: read as they are by day */
 
   /* ---- Type (Utopia) ---- */
   --step-5: clamp(2.4883rem, 2.2183rem + 1.3499vw, 3.4332rem);
@@ -78,7 +80,8 @@
   --cover: 3.5rem;           /* book cover thumbnails */
   --hit: 2.75rem;            /* 44px minimum target */
   --dialog-width: 34rem;
-  --panel-focus: 50% 40%;    /* what the fixed painting keeps in view */
+  --panel-focus: 50% 40%;    /* what the fixed painting keeps in view; each page sets its own */
+  --panel-width: min(50vw, 95vh); /* half the screen, never a strip on ultra-wide screens */
   --tilt: -1.5deg;           /* the postcard, slipped in by hand */
 
   /* ---- Lines, radius, shadow (Open Props) ---- */
@@ -119,6 +122,7 @@
     --ink-2: var(--sand-4);
     --rule: var(--sand-10);
     --accent: var(--red-6);
+    --ink-filter: invert(1) hue-rotate(180deg); /* ink prints turn to light lines on dark paper */
     --shadow-color: 220 40% 2%;
     --shadow-strength: 25%;
   }
@@ -130,6 +134,7 @@
   --ink-2: var(--sand-4);
   --rule: var(--sand-10);
   --accent: var(--red-6);
+  --ink-filter: invert(1) hue-rotate(180deg);
   --shadow-color: 220 40% 2%;
   --shadow-strength: 25%;
 }
