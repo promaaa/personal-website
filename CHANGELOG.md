@@ -13,8 +13,13 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 ## [2.0.0-alpha.1] - 2026-10-01
 
 ### Added
-- `proposals/`: three design directions for the v2 redesign (Marginalia, Letters patent, Chart). Each has its own `tokens.css`, a homepage preview with real content and one easter egg working end to end. The previews are `noindex` and not linked from the live site. See `proposals/README.md`.
+- `proposals/`: design directions for the v2 redesign. The previews are `noindex` and not linked from the live site. See `proposals/README.md`.
+  - Round 1: Letters patent and Chart.
+  - Round 2, hybrids of the two built around a real image: Sheet, Fiducial and As-built. Each has its own `tokens.css` and one easter egg, and they share one runtime (`proposals/shared/site.js`).
 - This changelog.
+
+### Removed
+- Marginalia, the round 1 direction rejected in review.
 
 ## [1.0.0] - 2026-10-01
 
