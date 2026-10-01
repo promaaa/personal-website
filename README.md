@@ -140,7 +140,7 @@ The homepage painting lives in three places: the `<picture>` in `index.html`, it
 `assets/css/tokens.css` is the single source of every design value: colour, type scale, space, radius, shadow, easing, duration, plus a block for print. Components in `assets/css/site.css` only read them through `var()`.
 
 - **Type and space**: fluid `clamp()` scales from [Utopia](https://utopia.fyi), 16 to 18 px between 320 and 1440 px viewports.
-- **Colour**: [Open Props](https://open-props.style) values. Light is blue ink on paper with a red accent; dark keeps the same letter at night.
+- **Colour**: [Open Props](https://open-props.style) values. Light is blue ink on paper with a red accent; dark reads the same letter by lamplight, parchment text on a warm black, with the same red for what matters.
 - **Motion**: three tokens, curves from [Kinetics](https://kinetics.colorion.co) sampled into `linear()`. Reduced motion shortens or removes all of them.
 - **Breakpoint**: one, at `56rem`, where the painting becomes a fixed panel. Media queries cannot read custom properties, so it is written in `site.css` and documented in `tokens.css`.
 
