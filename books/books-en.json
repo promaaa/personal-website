@@ -13,7 +13,8 @@
     "other_href": "fr/",
     "back": "Marc Duboc",
     "best_for": "Best for",
-    "description": "Twenty-one books Marc Duboc recommends to friends: liberty, systems and power, solitude and craft, and great narratives."
+    "description": "Twenty-one books Marc Duboc recommends to friends: liberty, systems and power, solitude and craft, and great narratives.",
+    "count_one": "{n} book"
   },
   "guide": {
     "masthead_tag": "Marc Duboc · Reading Field Guide",

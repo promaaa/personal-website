@@ -120,7 +120,7 @@ def shelf_html(d: dict, other: dict) -> str:
       <form class="search" role="search">
         <label for="q">{h(p["search_label"])}</label>
         <input id="q" type="search" placeholder="{html.escape(p["search_placeholder"])}" autocomplete="off" spellcheck="false">
-        <p class="muted small" aria-live="polite" data-count data-template="{html.escape(p["count"])}">{h(p["count"].format(n=n))}</p>
+        <p class="muted small" aria-live="polite" data-count data-template="{html.escape(p["count"])}" data-template-one="{html.escape(p["count_one"])}">{h(p["count"].format(n=n))}</p>
       </form>
       <p class="empty" hidden data-empty data-template="{html.escape(p["none"])}"></p>
 
