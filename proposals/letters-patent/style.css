@@ -1,0 +1,207 @@
+/* LETTERS PATENT · components. Every value comes from tokens.css. */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+dialog { margin: auto; } /* the reset above would pin dialogs to the corner */
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--space-l);
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+body {
+  font-size: var(--step-0);
+  line-height: var(--leading-text);
+  font-feature-settings: var(--figures);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  max-width: var(--sheet);
+  margin-inline: auto;
+  padding-inline: var(--space-s-l);
+}
+
+::selection { background: var(--stamp); color: var(--paper); }
+.theme-switching *, .theme-switching *::before, .theme-switching *::after { transition: none !important; }
+
+/* ---- One interaction language: the examiner's highlight ----
+   Underlined at rest; on hover the passage is washed in stamp violet,
+   as an examiner marks a citation. Buttons share it. */
+a, .text-button {
+  color: inherit;
+  text-decoration: underline var(--hairline) var(--ink-2);
+  text-underline-offset: var(--underline-offset);
+  border-radius: var(--radius-1);
+  transition:
+    background-color var(--dur-quick) var(--ease-quick),
+    text-decoration-color var(--dur-quick) var(--ease-quick);
+}
+@media (hover: hover) {
+  a:hover, .text-button:hover { background-color: var(--stamp-wash); text-decoration-color: var(--stamp); }
+}
+a:active, .text-button:active { background-color: var(--stamp-wash); }
+:focus-visible { outline: var(--border-size-2) solid var(--stamp); outline-offset: var(--border-size-2); }
+.text-button {
+  font: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+.text-button::after { /* 44px hit area, text unmoved */
+  content: "";
+  position: absolute;
+  inset: 50% 50%;
+  min-width: var(--hit);
+  min-height: var(--hit);
+  translate: -50% -50%;
+}
+
+.vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip { position: absolute; inset-inline-start: var(--space-s); inset-block-start: var(--space-s); translate: 0 -300%; background: var(--paper); padding: var(--space-2xs) var(--space-xs); }
+.skip:focus-visible { translate: 0 0; }
+
+.inid { color: var(--ink-2); font-feature-settings: var(--figures); }
+
+/* ---- Masthead ---- */
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2xs) var(--space-m);
+  padding-block: var(--space-s) var(--space-xs);
+  border-block-end: var(--rule-heavy) double var(--ink);
+  font-size: var(--step--1);
+}
+.masthead nav { margin-inline-start: auto; }
+.masthead ul { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-s); padding: 0; list-style: none; }
+.masthead nav a { display: inline-block; padding-block: var(--space-3xs); }
+.theme[aria-pressed="true"] { text-decoration-color: var(--stamp); text-decoration-thickness: var(--border-size-2); }
+
+/* ---- Front page ---- */
+.front { padding-block: var(--space-l-xl) var(--space-xl); border-block-end: var(--hairline) solid var(--ink); }
+.front-head { display: grid; gap: var(--space-s); padding-block-end: var(--space-m); border-block-end: var(--hairline) solid var(--rule); }
+h1 { font-size: var(--step-6); font-weight: 600; line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+.pubdata { font-size: var(--step--1); display: grid; gap: var(--space-3xs); }
+.pubdata div { display: flex; gap: var(--space-2xs); }
+.pubdata dt { color: var(--ink-2); }
+.pubdata dd { margin: 0; }
+
+.front-body { display: grid; gap: var(--space-l); padding-block-start: var(--space-m); }
+@media (min-width: 56rem) {
+  .front-head { grid-template-columns: 1fr auto; align-items: end; }
+  .front-body { grid-template-columns: 5fr 7fr; column-gap: var(--space-xl); }
+  .abstract { border-inline-start: var(--hairline) solid var(--rule); padding-inline-start: var(--space-xl); }
+}
+
+.biblio { display: grid; align-content: start; gap: var(--space-xs); font-size: var(--step--1); line-height: var(--leading-data); }
+.biblio > div { position: relative; padding-inline-start: var(--inid-col); }
+.biblio .inid { position: absolute; inset-inline-start: 0; }
+.biblio dt { display: inline; font-weight: 600; }
+.biblio dt::after { content: ": "; }
+.biblio dd { display: inline; margin: 0; }
+.biblio .title-field dt::after { content: none; }
+.biblio .title-field dd { display: block; font-size: var(--step-1); line-height: var(--leading-tight); font-weight: 600; text-wrap: balance; }
+.biblio .title-field dd[lang="fr"] { font-weight: 400; font-style: italic; color: var(--ink-2); margin-block-start: var(--space-2xs); font-size: var(--step-0); }
+
+.field { font-size: var(--step--1); font-weight: 600; margin-block-end: var(--space-2xs); }
+.abstract > p { text-wrap: pretty; }
+.resume { margin-block-start: var(--space-xs); font-style: italic; color: var(--ink-2); font-size: var(--step--1); }
+
+/* ---- Figures: patent line drawings, plotted once ---- */
+.fig { margin-block-start: var(--space-l); }
+.fig svg { display: block; width: 100%; height: auto; overflow: visible; }
+.fig .draw-group { stroke-width: var(--stroke-drawing); stroke-linecap: round; stroke-linejoin: round; }
+.fig text { font-family: var(--font-drawing); font-size: var(--drawing-letter); font-feature-settings: normal; }
+.fig .sign { font-size: var(--drawing-sign); }
+.fig figcaption { font-size: var(--step--1); color: var(--ink-2); margin-block-start: var(--space-s); text-wrap: pretty; }
+.fig-label { font-family: var(--font-drawing); color: var(--ink); margin-inline-end: var(--space-2xs); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .fig .draw {
+    stroke-dasharray: 1;
+    animation: plot var(--dur-standard) var(--ease-standard) backwards;
+    animation-delay: calc(var(--i) * var(--stagger));
+  }
+  .fig .numerals { animation: reveal var(--dur-expressive) var(--ease-quick) backwards; animation-delay: calc(8 * var(--stagger)); }
+}
+@keyframes plot { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes reveal { from { opacity: 0; } }
+
+/* ---- Specification ---- */
+.spec-section { padding-block: var(--space-xl-2xl) 0; max-width: calc(var(--measure) + var(--para-col)); }
+@media (min-width: 56rem) { .spec-section { padding-inline-start: var(--para-col); } }
+
+.heading { display: grid; gap: var(--space-3xs); margin-block-end: var(--space-m); font-size: var(--step--1); font-weight: 600; color: var(--ink-2); }
+.heading .sub { display: block; font-size: var(--step-3); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); color: var(--ink); text-wrap: balance; }
+
+.paras { padding: 0; list-style: none; display: grid; gap: var(--space-m); }
+.paras > li { position: relative; }
+.paras > li::before {
+  content: "[000" counter(list-item) "]" / "";
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-2);
+  display: block;
+}
+@media (min-width: 56rem) {
+  .paras > li::before { position: absolute; inset-inline-end: 100%; margin-inline-end: var(--space-s); inset-block-start: var(--space-3xs); }
+}
+.paras h3 { font-size: var(--step-1); font-weight: 600; line-height: var(--leading-tight); margin-block-end: var(--space-2xs); text-wrap: balance; }
+.paras p { text-wrap: pretty; }
+.refs { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-m); margin-block-start: var(--space-2xs); font-size: var(--step--1); }
+.refs a { padding-block: var(--space-3xs); }
+
+.list-head { font-size: var(--step--1); font-weight: 600; color: var(--ink-2); margin-block: var(--space-l) var(--space-2xs); }
+.cited { padding: 0; list-style: none; display: grid; gap: var(--space-2xs); }
+.cited > li { padding-inline-start: var(--space-m); text-indent: calc(var(--space-m) * -1); text-wrap: pretty; }
+.cited time { font-feature-settings: var(--figures); }
+@media (min-width: 56rem) {
+  .cited.two-col { display: block; columns: 2; column-gap: var(--space-l); }
+  .cited.two-col > li { break-inside: avoid; margin-block-end: var(--space-2xs); }
+}
+.more { margin-block-start: var(--space-m); }
+
+.claimed { font-style: italic; margin-block-end: var(--space-s); }
+.claims { padding-inline-start: var(--space-m); display: grid; gap: var(--space-s); }
+.claims li::marker { font-weight: 600; }
+.copy { margin-inline-start: var(--space-2xs); color: var(--ink-2); font-size: var(--step--1); }
+
+/* ---- End of document ---- */
+.end { padding-block: var(--space-2xl) var(--space-xl); text-align: center; font-size: var(--step--1); color: var(--ink-2); }
+.stars { margin-block-end: var(--space-s); color: var(--ink); }
+
+/* ---- Drawing sheet (easter-egg dialog) ---- */
+.sheet {
+  width: min(var(--dialog-width), calc(100vw - var(--space-l)));
+  max-height: calc(100dvh - var(--space-l));
+  padding: var(--space-m);
+  border: var(--hairline) solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  opacity: 1;
+  scale: 1;
+  transition: opacity var(--dur-expressive) var(--ease-quick), scale var(--dur-expressive) var(--ease-expressive);
+}
+@starting-style { .sheet[open] { opacity: 0; scale: var(--scale-enter); } }
+.sheet::backdrop { background: var(--scrim); }
+.sheet-no { display: flex; justify-content: space-between; font-size: var(--step--1); color: var(--ink-2); font-family: var(--font-drawing); }
+.sheet svg { display: block; width: 100%; height: auto; margin-block: var(--space-s); }
+.sheet .draw-group { stroke-width: var(--stroke-drawing); stroke-linejoin: round; stroke-linecap: round; }
+.sheet text { font-family: var(--font-drawing); font-size: var(--drawing-letter); }
+.sheet h2 { font-size: var(--step-2); font-weight: 600; line-height: var(--leading-tight); text-wrap: balance; }
+.sheet p { margin-block-start: var(--space-2xs); text-wrap: pretty; }
+.sheet .actions { display: flex; flex-wrap: wrap; gap: var(--space-m); margin-block-start: var(--space-m); font-size: var(--step--1); }
+.rotor { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .sheet .rotor { animation: spin var(--dur-rotor) linear infinite; }
+}
+@keyframes spin { to { rotate: 1turn; } }
