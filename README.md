@@ -22,7 +22,7 @@ Plain HTML, CSS and a few kilobytes of vanilla JavaScript, served by GitHub Page
 | ![The homepage in the light theme and in the dark theme, side by side](.github/readme/themes.webp) | **By day, by lamplight.** Blue ink on paper, or parchment on a warm black. The theme follows the system, and the toggle remembers your choice. |
 | ![Three phones: the homepage with its tilted postcard, an essay in the dark theme, and the French shelf](.github/readme/phones.webp) | **On a phone** the painting becomes a postcard slipped into the letter. Essays and the shelf keep one readable column. |
 | ![An essay in the dark theme: Friedrich's Woman at a Window held still on the left while the text runs on the right](.github/readme/essay.webp) | **Essays** keep their painting still on the left while the text scrolls, with previous and next links at the end. |
-| ![Seven paintings in a row: The Ninth Wave, The Monk by the Sea, Woman before the Rising Sun, Woman at a Window, The Tower of Babel, Max Schmitt in a Single Scull, and Hokusai's whale in blue ink](.github/readme/paintings.webp) | **One painting per page**, all in the public domain: Aivazovsky, Friedrich, Bruegel, Eakins and Hokusai, redrawn in dots. Each one weighs 40 to 100 KB. |
+| ![Seven paintings in a row: The Ninth Wave, The Monk by the Sea, Woman before the Rising Sun, Woman at a Window, The Tower of Babel, Max Schmitt in a Single Scull, and Hokusai's whale in blue ink](.github/readme/paintings.webp) | **One painting per page**: an ASCII manta on the homepage, and on the other pages public-domain paintings by Friedrich, Bruegel, Eakins and Hokusai, redrawn in dots. Each one weighs 40 to 100 KB. |
 | ![The bookshelf searched for dumas: one book left, The Count of Monte Cristo](.github/readme/search.webp) | **The shelf** lists twenty-one books in English and French as static HTML. The search narrows it as you type. |
 | ![First page of the reading guide PDF, in the same blue and red monospace](.github/readme/guide.webp) | **Reading guides**: the same shelf typeset as a PDF with XeLaTeX, generated from the same JSON. |
 
@@ -191,8 +191,8 @@ Changes land through pull requests and are recorded in [CHANGELOG.md](CHANGELOG.
 ## Credits
 
 - **Font**: [Comic Shanns Mono](https://github.com/jesusmgg/comic-shanns-mono) by Shannon Miwa and Jesus Gonzalez, under the MIT licence ([LICENSE](assets/fonts/LICENSE-comic-shanns-mono.md)). A middle dot glyph was added for this site.
-- **Paintings**, all in the public domain, redrawn in dots for this site:
-  - [*The Ninth Wave*](https://commons.wikimedia.org/wiki/File:Hovhannes_Aivazovsky_-_The_Ninth_Wave_-_Google_Art_Project.jpg), Ivan Aivazovsky, 1850;
+- **Homepage**: an ASCII manta ray, artist unknown, as a blue ink duotone.
+- **Paintings** on the other pages, all in the public domain, redrawn in dots for this site:
   - [*The Monk by the Sea*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Der_M%C3%B6nch_am_Meer_-_Google_Art_Project.jpg), Caspar David Friedrich, 1808–1810;
   - [*Woman before the Rising Sun*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Frau_vor_untergehender_Sonne.jpg), Caspar David Friedrich, c. 1818;
   - [*Woman at a Window*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Frau_am_Fenster_-_Google_Art_Project.jpg), Caspar David Friedrich, 1822;

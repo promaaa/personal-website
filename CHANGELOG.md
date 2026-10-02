@@ -10,6 +10,11 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.1] - 2026-10-02
+
+### Changed
+- Homepage painting: an ASCII manta ray in blue ink duotone replaces *The Ninth Wave*; the social card follows.
+
 ## [2.1.0] - 2026-10-01
 
 ### Added
@@ -100,7 +105,8 @@ The legacy easter-egg portfolio, as published on promaa.tech.
 - Three cinematic easter eggs: Galt, Monte Cristo, Assange.
 - Five essays, the bilingual book shelf, and the LaTeX reading guides (EN/FR).
 
-[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/promaaa/personal-website/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/promaaa/personal-website/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/promaaa/personal-website/compare/v2.0.2...v2.1.0
 [2.0.2]: https://github.com/promaaa/personal-website/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/promaaa/personal-website/compare/v2.0.0...v2.0.1
