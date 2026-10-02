@@ -14,6 +14,7 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ### Changed
 - Homepage painting: an ASCII manta ray in blue ink duotone replaces *The Ninth Wave*; the social card follows.
+- Favicon and touch icon: the site's own M in blue ink on paper, with a red full stop.
 
 ## [2.1.0] - 2026-10-01
 
