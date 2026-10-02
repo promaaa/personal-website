@@ -10,6 +10,9 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+### Changed
+- Favicon and touch icon: the site's own M in blue ink on paper, with a red full stop.
+
 ## [2.1.0] - 2026-10-01
 
 ### Added
