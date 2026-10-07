@@ -9,31 +9,31 @@ python3 -m http.server 8000   # then open http://localhost:8000
 [![Website](https://img.shields.io/badge/website-promaa.tech-c92a2a?style=flat-square)](https://promaa.tech)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/promaaa/personal-website/deploy.yml?branch=main&style=flat-square&label=deploy)](https://github.com/promaaa/personal-website/actions/workflows/deploy.yml)
 [![Release](https://img.shields.io/github/v/release/promaaa/personal-website?style=flat-square)](https://github.com/promaaa/personal-website/releases)
-![Lighthouse](https://img.shields.io/badge/lighthouse-100%20%C2%B7%20100%20%C2%B7%20100%20%C2%B7%20100-2ea44f?style=flat-square)
+![Lighthouse](https://img.shields.io/badge/lighthouse-98%20%C2%B7%20100%20%C2%B7%20100%20%C2%B7%20100-2ea44f?style=flat-square)
 
 Plain HTML, CSS and a few kilobytes of vanilla JavaScript, served by GitHub Pages straight from `main`. No framework, no build step, no tracker, no cookie. Every page reads fine with JavaScript off.
 
-![The homepage on a wide screen: Aivazovsky's The Ninth Wave, redrawn in coloured dots, fills the left half; on the right, Marc Duboc in red and the text in blue ink](.github/readme/home.webp)
+![The homepage on a wide screen: Van Gogh's Almond Blossom, redrawn in small coloured letters, fills the left half; on the right, Marc Duboc in red and the text in blue ink](.github/readme/home.webp)
 
 ## Gallery
 
 | Preview | What it shows |
 | --- | --- |
-| ![The homepage in the light theme and in the dark theme, side by side](.github/readme/themes.webp) | **By day, by lamplight.** Blue ink on paper, or parchment on a warm black. The theme follows the system, and the toggle remembers your choice. |
+| ![The homepage in the light theme and in the dark theme, side by side](.github/readme/themes.webp) | **By day, by night.** Blue ink on paper, or blossom white on the deep teal of the almond tree's sky. The theme follows the system, and the toggle remembers your choice. |
 | ![Three phones: the homepage with its tilted postcard, an essay in the dark theme, and the French shelf](.github/readme/phones.webp) | **On a phone** the painting becomes a postcard slipped into the letter. Essays and the shelf keep one readable column. |
 | ![An essay in the dark theme: Friedrich's Woman at a Window held still on the left while the text runs on the right](.github/readme/essay.webp) | **Essays** keep their painting still on the left while the text scrolls, with previous and next links at the end. |
-| ![Seven paintings in a row: The Ninth Wave, The Monk by the Sea, Woman before the Rising Sun, Woman at a Window, The Tower of Babel, Max Schmitt in a Single Scull, and Hokusai's whale in blue ink](.github/readme/paintings.webp) | **One painting per page**: an ASCII manta on the homepage, and on the other pages public-domain paintings by Friedrich, Bruegel, Eakins and Hokusai, redrawn in dots. Each one weighs 40 to 100 KB. |
+| ![Seven paintings in a row: Almond Blossom in letters, The Monk by the Sea, Woman before the Rising Sun, Woman at a Window, The Tower of Babel, Max Schmitt in a Single Scull, and Hokusai's whale in blue ink](.github/readme/paintings.webp) | **One painting per page**: Van Gogh's almond tree in letters on the homepage, and on the other pages public-domain paintings by Friedrich, Bruegel, Eakins and Hokusai, redrawn in dots. Each dot painting weighs 40 to 100 KB. |
 | ![The bookshelf searched for dumas: one book left, The Count of Monte Cristo](.github/readme/search.webp) | **The shelf** lists twenty-one books in English and French as static HTML. The search narrows it as you type. |
 | ![First page of the reading guide PDF, in the same blue and red monospace](.github/readme/guide.webp) | **Reading guides**: the same shelf typeset as a PDF with XeLaTeX, generated from the same JSON. |
 
 ## Features
 
 - **Diptych layout**: on a wide, landscape screen the painting holds the left half while the text scrolls on the right. Phones and upright tablets get a postcard instead, never taller than the screen. On ultra-wide screens the panel stops at 95% of the height and the text is centred in the space left.
-- **Paintings in dots**: public-domain paintings redrawn as 400×500 dots with an ordered dither, saved as lossless WebP at 2×, 3× and 4×. Each page sets the painting's focal point, so the panel crops around the subject at any screen ratio.
+- **Paintings in dots**: public-domain paintings redrawn as 400×500 dots with an ordered dither, saved as lossless WebP at 2×, 3× and 4×. Each page sets the painting's focal point, so the panel crops around the subject at any screen ratio. The homepage's painting is drawn in letters instead: 150 × 125 cells of Comic Shanns Mono on a pale wash of the painting's colours.
 - **One family, one weight**: Comic Shanns Mono, standing in for Comic Code. Hierarchy comes from size and colour only: blue ink, and a red for what matters.
 - **Light and dark**: both themes are designed, not inverted. Theme switches never animate.
 - **Bilingual shelf**: `/books/` and `/books/fr/` are generated from `books/books-en.json` and `books/books-fr.json`, the single source that also feeds the PDF guides.
-- **Fast**: the homepage weighs 95 KB in all: about 13 KB of HTML, CSS and JavaScript (gzipped), one 15 KB font and a 50 KB painting. The painting is preloaded and picked from `srcset` by the panel's real size. Links prerender on hover with Speculation Rules.
+- **Fast**: about 13 KB of HTML, CSS and JavaScript (gzipped) and one 15 KB font. The homepage painting, in letters, is the heavy part: 200, 370 or 556 KB, picked from `srcset` by the panel's real size, so the homepage weighs about 230 KB on a 1× laptop and 400 KB on a 3× phone. The painting is preloaded. Links prerender on hover with Speculation Rules.
 - **Accessible**: skip link, visible focus, 44 px targets, landmarks for screen readers, reduced motion respected. Contrast is checked in both themes with axe.
 - **Works without JavaScript**: every page and both shelves are plain HTML. Script adds the theme toggle, the search and the copy button on top.
 - **Prints cleanly**: a print stylesheet turns any page into a plain letter.
@@ -167,7 +167,7 @@ magick source.jpg -crop 2064x2580+810+0 +repage crop.png
 `assets/css/tokens.css` is the single source of every design value: colour, type scale, space, radius, shadow, easing, duration, plus a block for print. Components in `assets/css/site.css` only read them through `var()`.
 
 - **Type and space**: fluid `clamp()` scales from [Utopia](https://utopia.fyi), 16 to 18 px between 320 and 1440 px viewports.
-- **Colour**: [Open Props](https://open-props.style) values. Light is blue ink on paper with a red accent. Dark reads the same letter by lamplight: parchment text on a warm black, with the same red for what matters.
+- **Colour**: [Open Props](https://open-props.style) values, and a teal sampled from the homepage painting. Light is blue ink on paper with a red accent. Dark reads the same letter at night under the almond tree: blossom-white text on the deep teal of its sky, with a coral red for what matters.
 - **Motion**: three tokens, curves from [Kinetics](https://kinetics.colorion.co) sampled into `linear()`. Reduced motion shortens or removes all of them.
 - **Breakpoint**: one, at `56rem` on a screen at least 5:4 wide, where the painting becomes a fixed panel `--panel-width` wide. Media queries cannot read custom properties, so the query is written in `site.css` and in each image's `sizes`, and documented in `tokens.css`.
 
@@ -191,7 +191,7 @@ Changes land through pull requests and are recorded in [CHANGELOG.md](CHANGELOG.
 ## Credits
 
 - **Font**: [Comic Shanns Mono](https://github.com/jesusmgg/comic-shanns-mono) by Shannon Miwa and Jesus Gonzalez, under the MIT licence ([LICENSE](assets/fonts/LICENSE-comic-shanns-mono.md)). A middle dot glyph was added for this site.
-- **Homepage**: an ASCII manta ray, artist unknown, as a blue ink duotone.
+- **Homepage**: [*Almond Blossom*](https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg), Vincent van Gogh, 1890, in the public domain, redrawn in letters for this site.
 - **Paintings** on the other pages, all in the public domain, redrawn in dots for this site:
   - [*The Monk by the Sea*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Der_M%C3%B6nch_am_Meer_-_Google_Art_Project.jpg), Caspar David Friedrich, 1808–1810;
   - [*Woman before the Rising Sun*](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Frau_vor_untergehender_Sonne.jpg), Caspar David Friedrich, c. 1818;
