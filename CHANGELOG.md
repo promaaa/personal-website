@@ -10,6 +10,18 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.4] - 2026-10-07
+
+### Fixed
+- Every easter egg opened two notes, so *Close* had to be pressed twice (since 2.1.3): the eggs imported `site.js` under a second URL and ran it again. `site.js` now hands each egg its helpers, and imports the eggs with its own `?v=`.
+
+### Changed
+- The shelf and the reading guides open with a short, plain introduction, in English and French.
+- The homepage painting is served as AVIF (144 to 375 KB, a quarter lighter at the same fidelity), with WebP as the fallback. The homepage weighs about 175 KB on a laptop; mobile performance 99.
+
+### Removed
+- `data/`, the v1 copy of the shelf, read by nothing since v2.
+
 ## [2.1.3] - 2026-10-07
 
 ### Fixed

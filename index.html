@@ -29,13 +29,13 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/comic-shanns-mono.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/images/almond-800.webp 800w, assets/images/almond-1200.webp 1200w, assets/images/almond-1600.webp 1600w" imagesizes="(min-width: 56rem) and (min-aspect-ratio: 5/4) max(50vw, 80vh), 92vw" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/tokens.css?v=2.1.3">
-  <link rel="stylesheet" href="assets/css/site.css?v=2.1.3">
-  <link rel="stylesheet" href="assets/css/print.css?v=2.1.3" media="print">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="assets/images/almond-800.avif 800w, assets/images/almond-1200.avif 1200w, assets/images/almond-1600.avif 1600w" imagesizes="(min-width: 56rem) and (min-aspect-ratio: 5/4) max(50vw, 80vh), 92vw" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=2.1.4">
+  <link rel="stylesheet" href="assets/css/site.css?v=2.1.4">
+  <link rel="stylesheet" href="assets/css/print.css?v=2.1.4" media="print">
   <noscript><style>[data-theme-toggle], [data-needs-js], [data-postmarks], .search { display: none !important; }</style></noscript>
   <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" src="assets/js/site.js?v=2.1.3"></script>
+  <script type="module" src="assets/js/site.js?v=2.1.4"></script>
   <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"*.pdf"}}]},"eagerness":"moderate"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Marc Duboc","jobTitle":"Robotics & Embedded Systems Engineer","url":"https://promaa.tech/","email":"mailto:marc.duboc@imt-atlantique.net","image":"https://promaa.tech/assets/images/og.jpg","affiliation":{"@type":"CollegeOrUniversity","name":"Seoul National University"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"IMT Atlantique"}],"address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"sameAs":["https://github.com/promaaa","https://www.linkedin.com/in/marc-duboc1/","https://x.com/proma__","https://www.youtube.com/@promaa_"]}</script>
 </head>
@@ -62,7 +62,10 @@
       <p class="aside" data-night hidden>It’s late where you are. <button class="pen" type="button" data-egg="frankl">A word for the night</button></p>
 
       <figure class="painting" style="--panel-focus: 50% 40%">
-        <img src="assets/images/almond-1200.webp" srcset="assets/images/almond-800.webp 800w, assets/images/almond-1200.webp 1200w, assets/images/almond-1600.webp 1600w" sizes="(min-width: 56rem) and (min-aspect-ratio: 5/4) max(50vw, 80vh), 92vw" width="1200" height="1500" alt="Van Gogh's Almond Blossom: white flowers on gnarled branches against a blue sky, redrawn in small coloured letters on a pale wash." fetchpriority="high">
+        <picture>
+          <source type="image/avif" srcset="assets/images/almond-800.avif 800w, assets/images/almond-1200.avif 1200w, assets/images/almond-1600.avif 1600w" sizes="(min-width: 56rem) and (min-aspect-ratio: 5/4) max(50vw, 80vh), 92vw">
+          <img src="assets/images/almond-1200.webp" srcset="assets/images/almond-800.webp 800w, assets/images/almond-1200.webp 1200w, assets/images/almond-1600.webp 1600w" sizes="(min-width: 56rem) and (min-aspect-ratio: 5/4) max(50vw, 80vh), 92vw" width="1200" height="1500" alt="Van Gogh's Almond Blossom: white flowers on gnarled branches against a blue sky, redrawn in small coloured letters on a pale wash." fetchpriority="high">
+        </picture>
         <figcaption><cite><a href="https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg">Almond Blossom</a></cite>, Vincent van Gogh, 1890. <button class="pen" type="button" data-egg="galt" data-needs-js>Who set the type?</button></figcaption>
       </figure>
 

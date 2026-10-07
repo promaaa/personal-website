@@ -74,8 +74,10 @@ export async function hatch(id) {
   if (busy || document.querySelector("dialog[open]")) return;
   busy = true;
   try {
-    const egg = await import(`./eggs/${id}.js`);
-    if (egg.default() !== false) remember(id); // an egg can decline (the wheel did not stop on zero)
+    const egg = await import(`./eggs/${id}.js${new URL(import.meta.url).search}`); // the page's ?v=, so a release refreshes the eggs too
+    // The egg gets the helpers as an argument. Importing ../site.js itself would load this
+    // file a second time (the pages load site.js?v=…) and every click would open two notes.
+    if (egg.default({ dialog, found, EGGS }) !== false) remember(id); // an egg can decline (the wheel did not stop on zero)
   } catch {} finally { busy = false; }
 }
 

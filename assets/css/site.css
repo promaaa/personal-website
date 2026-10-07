@@ -84,6 +84,7 @@ section > p + p { margin-block-start: var(--space-s); }
   box-shadow: var(--shadow-2);
   rotate: var(--tilt);
 }
+.painting picture { display: contents; } /* the AVIF wrapper adds no box: the img still sizes against the figure */
 .painting img { inline-size: auto; max-block-size: 75vh; max-block-size: 75svh; }
 .painting figcaption { max-inline-size: 0; min-inline-size: 100%; margin-block-start: var(--space-2xs); font-size: var(--step--1); color: var(--ink-2); }
 .painting.ink img { filter: var(--ink-filter); }

@@ -1,7 +1,6 @@
 // Snowden: the permanent record. Everything this site keeps about you, shown in full.
-import { dialog } from "../site.js";
 
-export default () => {
+export default ({ dialog }) => {
   let rows = "";
   try {
     for (let i = 0; i < localStorage.length; i++) {
