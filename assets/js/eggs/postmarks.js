@@ -1,5 +1,4 @@
 // The ledger: which postmarks this browser has collected, and a hint for the rest.
-import { dialog, found, EGGS } from "../site.js";
 
 const BOOK = {
   galt: ["Who is John Galt?", "A painting with no painter asks a question."],
@@ -14,7 +13,7 @@ const BOOK = {
   laboetie: ["Nothing to escape from", "Refuse three times."],
 };
 
-export default () => {
+export default ({ dialog, found, EGGS }) => {
   const got = found();
   const items = EGGS.map((id) => {
     const [title, hint] = BOOK[id];

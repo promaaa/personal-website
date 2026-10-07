@@ -1,6 +1,5 @@
 // Galt: "Who set the type?" has no answer, like the other question.
 // Sound is opt-in (explicit button), always stoppable, and stops on close.
-import { dialog } from "../site.js";
 
 const teeth = Array.from({ length: 12 }, (_, i) => {
   const a = (i * Math.PI) / 6, c = Math.cos(a), s = Math.sin(a);
@@ -30,7 +29,7 @@ function hum(on) {
   audio = { ctx, gain };
 }
 
-export default () => {
+export default ({ dialog }) => {
   const d = dialog("Who is John Galt?", `
     <h2>Who is John Galt?</h2>
     <p>Van Gogh painted the almond tree in 1890. A machine set the type, and nobody signed the motor either.</p>

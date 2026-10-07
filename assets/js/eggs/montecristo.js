@@ -1,7 +1,6 @@
 // Monte-Cristo: the P.P.S. that only appears to those who wait.
-import { dialog } from "../site.js";
 
-export default () => dialog("Wait and hope", `
+export default ({ dialog }) => dialog("Wait and hope", `
   <h2>Wait and hope.</h2>
   <blockquote lang="fr"><p>« Toute la sagesse humaine sera dans ces deux mots : Attendre et espérer ! »</p></blockquote>
   <blockquote><p>“All human wisdom is contained in these two words: Wait and hope.”</p></blockquote>
