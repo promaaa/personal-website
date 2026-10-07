@@ -74,7 +74,7 @@ def shelf_html(d: dict, other: dict) -> str:
   <link rel="alternate" hreflang="fr" href="https://promaa.tech/books/fr/">
   <link rel="alternate" hreflang="x-default" href="https://promaa.tech/books/">
   <meta name="theme-color" content="#f2f4f6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#121210" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0f2b2e" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{here}">
   <meta property="og:site_name" content="Marc Duboc">
@@ -88,13 +88,13 @@ def shelf_html(d: dict, other: dict) -> str:
   <link rel="icon" href="{up}favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{up}assets/images/apple-touch-icon.png">
   <link rel="preload" href="{up}assets/fonts/comic-shanns-mono.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{up}assets/css/tokens.css">
-  <link rel="stylesheet" href="{up}assets/css/site.css">
-  <link rel="stylesheet" href="{up}assets/css/print.css" media="print">
+  <link rel="stylesheet" href="{up}assets/css/tokens.css?v=2.1.3">
+  <link rel="stylesheet" href="{up}assets/css/site.css?v=2.1.3">
+  <link rel="stylesheet" href="{up}assets/css/print.css?v=2.1.3" media="print">
   <noscript><style>[data-theme-toggle], [data-needs-js], [data-postmarks], .search {{ display: none !important; }}</style></noscript>
   <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
-  <script type="module" src="{up}assets/js/site.js"></script>
-  <script type="module" src="{up}assets/js/books.js"></script>
+  <script type="module" src="{up}assets/js/site.js?v=2.1.3"></script>
+  <script type="module" src="{up}assets/js/books.js?v=2.1.3"></script>
   <script type="speculationrules">{{"prerender":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"*.pdf"}}}}]}},"eagerness":"moderate"}}]}}</script>
 </head>
 <body>
