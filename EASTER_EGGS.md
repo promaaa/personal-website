@@ -45,7 +45,7 @@ The footer shows **postmarks n/10**, which links to `#postmarks`. The ledger lis
 
 ## Add an egg
 
-1. Write `assets/js/eggs/<id>.js`. Export a default function that calls `dialog(label, html)` from `../site.js`. Return `false` if this run should not count as found.
+1. Write `assets/js/eggs/<id>.js`. Export a default function: it receives `{ dialog, found, EGGS }` from `site.js` and calls `dialog(label, html)`. Never import `../site.js` in an egg: the pages load `site.js?v=…`, so a second import runs it twice and every door opens two notes. Return `false` if this run should not count as found.
 2. Add the id to `EGGS` in `assets/js/site.js`, plus any typed words or hashes to `WORDS`.
 3. Give it a door: a `data-egg="<id>"` attribute on a button, a `data-egg-select` on text, or a condition in `site.js`.
 4. Add its title and hint to `BOOK` in `assets/js/eggs/postmarks.js`, and a row to this file.
