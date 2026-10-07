@@ -10,6 +10,11 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.5] - 2026-10-07
+
+### Changed
+- The shelf and the reading guides open with two words: *Good books.* / *De bons livres.*
+
 ## [2.1.4] - 2026-10-07
 
 ### Fixed
