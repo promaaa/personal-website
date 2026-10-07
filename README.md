@@ -9,7 +9,7 @@ python3 -m http.server 8000   # then open http://localhost:8000
 [![Website](https://img.shields.io/badge/website-promaa.tech-c92a2a?style=flat-square)](https://promaa.tech)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/promaaa/personal-website/deploy.yml?branch=main&style=flat-square&label=deploy)](https://github.com/promaaa/personal-website/actions/workflows/deploy.yml)
 [![Release](https://img.shields.io/github/v/release/promaaa/personal-website?style=flat-square)](https://github.com/promaaa/personal-website/releases)
-![Lighthouse](https://img.shields.io/badge/lighthouse-98%20%C2%B7%20100%20%C2%B7%20100%20%C2%B7%20100-2ea44f?style=flat-square)
+![Lighthouse](https://img.shields.io/badge/lighthouse-99%20%C2%B7%20100%20%C2%B7%20100%20%C2%B7%20100-2ea44f?style=flat-square)
 
 Plain HTML, CSS and a few kilobytes of vanilla JavaScript, served by GitHub Pages straight from `main`. No framework, no build step, no tracker, no cookie. Every page reads fine with JavaScript off.
 
@@ -29,11 +29,11 @@ Plain HTML, CSS and a few kilobytes of vanilla JavaScript, served by GitHub Page
 ## Features
 
 - **Diptych layout**: on a wide, landscape screen the painting holds the left half while the text scrolls on the right. Phones and upright tablets get a postcard instead, never taller than the screen. On ultra-wide screens the panel stops at 95% of the height and the text is centred in the space left.
-- **Paintings in dots**: public-domain paintings redrawn as 400×500 dots with an ordered dither, saved as lossless WebP at 2×, 3× and 4×. Each page sets the painting's focal point, so the panel crops around the subject at any screen ratio. The homepage's painting is drawn in letters instead: 150 × 125 cells of Comic Shanns Mono on a pale wash of the painting's colours.
+- **Paintings in dots**: public-domain paintings redrawn as 400×500 dots with an ordered dither, saved as lossless WebP at 2×, 3× and 4×. Each page sets the painting's focal point, so the panel crops around the subject at any screen ratio. The homepage's painting is drawn in letters instead: 150 × 125 cells of Comic Shanns Mono on a pale wash of the painting's colours, served as AVIF with WebP as the fallback.
 - **One family, one weight**: Comic Shanns Mono, standing in for Comic Code. Hierarchy comes from size and colour only: blue ink, and a red for what matters.
 - **Light and dark**: both themes are designed, not inverted. Theme switches never animate.
 - **Bilingual shelf**: `/books/` and `/books/fr/` are generated from `books/books-en.json` and `books/books-fr.json`, the single source that also feeds the PDF guides.
-- **Fast**: about 13 KB of HTML, CSS and JavaScript (gzipped) and one 15 KB font. The homepage painting, in letters, is the heavy part: 200, 370 or 556 KB, picked from `srcset` by the panel's real size, so the homepage weighs about 230 KB on a 1× laptop and 400 KB on a 3× phone. The painting is preloaded. Links prerender on hover with Speculation Rules.
+- **Fast**: about 13 KB of HTML, CSS and JavaScript (gzipped) and one 15 KB font. The homepage painting, in letters, is the heavy part: 144, 270 or 375 KB in AVIF (WebP for older browsers), picked from `srcset` by the panel's real size, so the homepage weighs about 175 KB on a 1× laptop and 300 KB on a 3× phone. The painting is preloaded. Links prerender on hover with Speculation Rules.
 - **Accessible**: skip link, visible focus, 44 px targets, landmarks for screen readers, reduced motion respected. Contrast is checked in both themes with axe.
 - **Works without JavaScript**: every page and both shelves are plain HTML. Script adds the theme toggle, the search and the copy button on top.
 - **Prints cleanly**: a print stylesheet turns any page into a plain letter.
@@ -188,7 +188,7 @@ Releases follow [Semantic Versioning](https://semver.org/) and are tagged on `ma
 
 Changes land through pull requests and are recorded in [CHANGELOG.md](CHANGELOG.md).
 
-When a release changes a CSS or JavaScript file, raise the `?v=` on every link to it, in each page and in `books/generate.py`. Cloudflare lets browsers keep those files for four hours, so without a new `?v=` a returning visitor gets the new page with the old styles.
+When a release changes a CSS or JavaScript file, raise the `?v=` on every link to it, in each page and in `books/generate.py`. Cloudflare lets browsers keep those files for four hours, so without a new `?v=` a returning visitor gets the new page with the old styles. The eggs follow `site.js`'s own `?v=` by themselves.
 
 ## Credits
 
