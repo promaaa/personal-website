@@ -6,7 +6,8 @@
 
    Type & space   Utopia (utopia-core 1.6, the utopia.fyi engine)
                   type 16px@320 → 18px@1440, ×1.2 → ×1.25; space base 16 → 18
-   Colour         Open Props 1.7 values (stone, sand, gray, blue, red), trimmed
+   Colour         Open Props 1.7 values (stone, gray, blue, red), trimmed;
+                  the dark theme's teal is sampled from the homepage painting
    Motion         three tokens; curves from Kinetics (kinetics.colorion.co),
                   which publishes cubic-beziers only, sampled into linear()
    Breakpoint     56rem and a landscape screen (5/4 or wider): the painting
@@ -30,14 +31,16 @@
   --gray-4: #ced4da;
   --gray-7: #495057;
   --gray-12: #030507;
-  --stone-12: #121210;
-  --sand-1: #e6e4dc;
-  --sand-4: #aea58c;
-  --sand-10: #38352d;
-  --sand-11: #252521;
   --blue-11: #114678;
-  --red-6: #fa5252;
   --red-9: #c92a2a;
+
+  /* ---- Night colours, from Van Gogh's almond tree on the homepage ---- */
+  --teal-1: #e3eeec;         /* blossom white */
+  --teal-4: #9fbfbe;
+  --teal-10: #2b4c4b;
+  --teal-11: #173739;
+  --teal-12: #0f2b2e;        /* the sky's deepest blue */
+  --coral-6: #ff7b6b;
 
   /* ---- Airmail: blue ink on paper, red for what matters ---- */
   --paper: var(--stone-1);
@@ -112,30 +115,31 @@
   --idle-ms: 60000;          /* stillness before "wait and hope" appears (read by site.js) */
 }
 
-/* ---- Night mail: the same letter read by lamplight. Warm black, parchment
-   ink, a true red; colour stays on the accents, never on the running text. ---- */
+/* ---- Night mail: the same letter read under the almond tree at night. The
+   sky's deepest teal, blossom-white ink, a coral red; colour stays on the
+   accents, never on the running text. ---- */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: var(--stone-12);
-    --card: var(--sand-11);
-    --ink: var(--sand-1);
-    --ink-2: var(--sand-4);
-    --rule: var(--sand-10);
-    --accent: var(--red-6);
+    --paper: var(--teal-12);
+    --card: var(--teal-11);
+    --ink: var(--teal-1);
+    --ink-2: var(--teal-4);
+    --rule: var(--teal-10);
+    --accent: var(--coral-6);
     --ink-filter: invert(1) hue-rotate(180deg); /* ink prints turn to light lines on dark paper */
-    --shadow-color: 220 40% 2%;
+    --shadow-color: 186 50% 3%;
     --shadow-strength: 25%;
   }
 }
 :root[data-theme="dark"] {
-  --paper: var(--stone-12);
-  --card: var(--sand-11);
-  --ink: var(--sand-1);
-  --ink-2: var(--sand-4);
-  --rule: var(--sand-10);
-  --accent: var(--red-6);
+  --paper: var(--teal-12);
+  --card: var(--teal-11);
+  --ink: var(--teal-1);
+  --ink-2: var(--teal-4);
+  --rule: var(--teal-10);
+  --accent: var(--coral-6);
   --ink-filter: invert(1) hue-rotate(180deg);
-  --shadow-color: 220 40% 2%;
+  --shadow-color: 186 50% 3%;
   --shadow-strength: 25%;
 }
 

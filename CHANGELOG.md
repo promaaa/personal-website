@@ -10,6 +10,14 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.2] - 2026-10-07
+
+### Changed
+- Homepage painting: Van Gogh's *Almond Blossom* (1890, public domain), redrawn in 150 × 125 letters of Comic Shanns Mono on a pale wash, replaces the ASCII manta. The social card follows.
+- Dark theme: the same letter read at night under the almond tree. Deep teal paper (`--teal-12`), blossom-white text, a coral red accent, all sampled from the painting; the warm black and parchment are gone. The dark `theme-color` follows on every page.
+- The Galt door reads *Who set the type?*, and its note credits Van Gogh.
+- README: every screenshot of the homepage and of the dark theme retaken; weight and Lighthouse numbers measured again (the painting in letters weighs 200 to 556 KB, mobile performance 98).
+
 ## [2.1.1] - 2026-10-02
 
 ### Changed

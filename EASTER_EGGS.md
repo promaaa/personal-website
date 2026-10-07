@@ -14,7 +14,7 @@ Spoilers below.
 
 | Egg | Layer | Trigger | Idea | File |
 | --- | --- | --- | --- | --- |
-| **Galt** | obvious | *Who set the dots?* under the homepage painting; type `galt`; `#galt` | Aivazovsky painted the wave; a machine set the dots, and nobody signs a machine, so the question has no answer, like *Who is John Galt?* It opens the motor of the world, a drawing whose rotor turns, with an opt-in hum. | `assets/js/eggs/galt.js` |
+| **Galt** | obvious | *Who set the type?* under the homepage painting; type `galt`; `#galt` | Van Gogh painted the almond tree; a machine set the type, and nobody signs a machine, so the question has no answer, like *Who is John Galt?* It opens the motor of the world, a drawing whose rotor turns, with an opt-in hum. | `assets/js/eggs/galt.js` |
 | **Monte-Cristo** | hinted | Stay still for 60 seconds and a *P.P.S. wait and hope* appears; type `dantes` or `attendre`; `#montecristo` | Only those who wait see it. It shows Dantès's last words, in French and English. | `assets/js/eggs/montecristo.js` |
 | **Assange** | hinted | Select the struck-out P.S. at the end of the homepage; type `assange`; `#wikileaks` | A line in black ink that selection reveals (CSS only), then the portrait: “Courage is contagious.” Opening the note clears the selection, so closing it does not select the line again. | `assets/js/eggs/assange.js` |
 | **Snowden** | hinted | An HTML comment at the top of the homepage source points to `#permanent-record` | Shows everything the site stores about you (only `localStorage`: theme and eggs), with a *Forget me* button. | `assets/js/eggs/snowden.js` |
