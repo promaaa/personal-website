@@ -10,6 +10,12 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.3] - 2026-10-07
+
+### Fixed
+- Returning visitors saw the new homepage with the old dark theme: Cloudflare lets browsers keep CSS and JavaScript for four hours. Every link to a stylesheet or script now carries the release (`?v=2.1.3`), so a new page always loads its own styles.
+- `books/generate.py` still wrote the old dark `theme-color`; regenerating the shelf would have brought it back.
+
 ## [2.1.2] - 2026-10-07
 
 ### Changed

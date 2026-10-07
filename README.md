@@ -188,6 +188,8 @@ Releases follow [Semantic Versioning](https://semver.org/) and are tagged on `ma
 
 Changes land through pull requests and are recorded in [CHANGELOG.md](CHANGELOG.md).
 
+When a release changes a CSS or JavaScript file, raise the `?v=` on every link to it, in each page and in `books/generate.py`. Cloudflare lets browsers keep those files for four hours, so without a new `?v=` a returning visitor gets the new page with the old styles.
+
 ## Credits
 
 - **Font**: [Comic Shanns Mono](https://github.com/jesusmgg/comic-shanns-mono) by Shannon Miwa and Jesus Gonzalez, under the MIT licence ([LICENSE](assets/fonts/LICENSE-comic-shanns-mono.md)). A middle dot glyph was added for this site.
