@@ -10,6 +10,11 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.6] - 2026-10-12
+
+### Changed
+- NAND2CPU is now a 16-bit CPU core, not only an ALU: 2,288 NAND gates and 152 flip-flops, sixteen instructions, eight registers. The README's homepage screenshot follows.
+
 ## [2.1.5] - 2026-10-07
 
 ### Changed
