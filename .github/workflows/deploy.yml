@@ -28,6 +28,18 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
+      # The two stylesheets go inside each page, so a first visit paints one round trip
+      # sooner. The repository keeps the <link>s: any static server still works locally.
+      - name: Inline the stylesheets
+        run: |
+          python3 - <<'EOF'
+          import pathlib, re
+          css = {n: re.sub(r"/\*.*?\*/\s*", "", pathlib.Path(f"assets/css/{n}.css").read_text(), flags=re.S) for n in ("tokens", "site")}
+          css["tokens"] = css["tokens"].replace("../fonts/", "/assets/fonts/")  # the font URL, now read from the page
+          for page in pathlib.Path(".").rglob("*.html"):
+              page.write_text(re.sub(r'<link rel="stylesheet" href="[^"]*assets/css/(tokens|site)\.css[^"]*">', lambda m: f"<style>{css[m[1]]}</style>", page.read_text()))
+          EOF
+
       - name: Upload static artifact
         uses: actions/upload-pages-artifact@v3
         with:

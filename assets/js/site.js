@@ -42,6 +42,16 @@ for (const btn of document.querySelectorAll("[data-copy]")) {
 // Doors that only work with JavaScript stay hidden without it.
 for (const el of document.querySelectorAll("[data-needs-js]")) el.hidden = false;
 
+// A second after load, fetch every page this one links to (a few KB of HTML each), so a tap
+// never waits for the server. That late, it never competes with the painting, and Lighthouse
+// does not count it in the page's own load. Hovering a link still prerenders it (the page's rules).
+addEventListener("load", () => setTimeout(() => {
+  const rules = document.createElement("script");
+  rules.type = "speculationrules";
+  rules.textContent = JSON.stringify({ prefetch: [{ where: { and: [{ href_matches: "/*" }, { not: { href_matches: "/*.pdf" } }] }, eagerness: "immediate" }] });
+  document.head.append(rules);
+}, 1000));
+
 // ---- The hidden layer ----
 // Ten eggs. The ledger ("postmarks") is the eleventh door and lists them.
 export const EGGS = ["galt", "montecristo", "assange", "verne", "frankl", "bostrom", "snowden", "gambler", "gombrich", "laboetie"];

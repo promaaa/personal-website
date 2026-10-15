@@ -33,7 +33,7 @@ Plain HTML, CSS and a few kilobytes of vanilla JavaScript, served by GitHub Page
 - **One family, one weight**: Comic Shanns Mono, standing in for Comic Code. Hierarchy comes from size and colour only: blue ink, and a red for what matters.
 - **Light and dark**: both themes are designed, not inverted. Theme switches never animate.
 - **Bilingual shelf**: `/books/` and `/books/fr/` are generated from `books/books-en.json` and `books/books-fr.json`, the single source that also feeds the PDF guides.
-- **Fast**: about 13 KB of HTML, CSS and JavaScript (gzipped) and one 15 KB font. The homepage painting, in letters, is the heavy part: 144, 270 or 375 KB in AVIF (WebP for older browsers), picked from `srcset` by the panel's real size, so the homepage weighs about 175 KB on a 1× laptop and 300 KB on a 3× phone. The painting is preloaded. Links prerender on hover with Speculation Rules.
+- **Fast**: about 13 KB of HTML, CSS and JavaScript (gzipped) and one 15 KB font. The homepage painting, in letters, is the heavy part: 144, 270 or 375 KB in AVIF (WebP for older browsers), picked from `srcset` by the panel's real size, so the homepage weighs about 175 KB on a 1× laptop and 300 KB on a 3× phone. The painting is preloaded. The deploy puts the two stylesheets inside each page, so a first visit paints one round trip sooner. A second after a page loads, it fetches the pages it links to (a few KB of HTML each), so a tap does not wait for the server; hovering a link prerenders it.
 - **Accessible**: skip link, visible focus, 44 px targets, landmarks for screen readers, reduced motion respected. Contrast is checked in both themes with axe.
 - **Works without JavaScript**: every page and both shelves are plain HTML. Script adds the theme toggle, the search and the copy button on top.
 - **Prints cleanly**: a print stylesheet turns any page into a plain letter.
@@ -65,7 +65,7 @@ The 404 page uses absolute paths, because GitHub Pages serves it at any missing 
 
 ## Deployment
 
-Every push to `main` deploys through `.github/workflows/deploy.yml`. The workflow uploads the repository as it is; there is nothing to compile.
+Every push to `main` deploys through `.github/workflows/deploy.yml`. The workflow uploads the repository as it is, with one change: it copies `tokens.css` and `site.css` into a `<style>` in each page. There is nothing to compile, and locally the pages keep their `<link>`s.
 
 1. In the repository, open **Settings > Pages** and set **Source** to **GitHub Actions**.
 2. Under **Custom domain**, enter `promaa.tech`. The `CNAME` file holds the same name.
