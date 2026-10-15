@@ -10,6 +10,15 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+## [2.1.7] - 2026-10-16
+
+### Changed
+- Pages open faster after a tap. A second after a page loads, it fetches the pages it links to (a few KB of HTML each). On a slow phone connection, the next page now paints in about 140 ms after a tap, against 400 ms before.
+- The deploy copies the two stylesheets into each page. A first visit paints one round trip sooner: 530 ms against 710 ms on a slow phone connection. The repository keeps the `<link>`s.
+
+### Fixed
+- The speculation rules skipped PDFs only on the homepage. On the shelf and the essays, hovering a PDF link fetched the PDF (410 KB for the reading guide). The rule now reads `/*.pdf`.
+
 ## [2.1.6] - 2026-10-12
 
 ### Changed
