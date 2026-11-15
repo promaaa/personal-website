@@ -10,6 +10,9 @@ Each release is a git tag (`vX.Y.Z`) on `main`. Work lands through pull requests
 
 ## [Unreleased]
 
+### Added
+- Pigeon, first prize at the MAWD Start-up Hackathon in Seoul, joins the projects, with its source and its trailer.
+
 ## [2.1.7] - 2026-10-16
 
 ### Changed
